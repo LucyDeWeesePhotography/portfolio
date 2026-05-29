@@ -1,17 +1,464 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  color: #222;
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&family=Satisfy&display=swap");
+
+/* ==========================================
+   RESET & SYSTEM BASICS
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h1 {
-  margin-top: 100px;
-  font-size: 3rem;
-  letter-spacing: 2px;
+/* 1. FIRST OUTER FRAME: Your main cream/caramel viewport outer background */
+body.site-frame {
+    background-color: #f5ebe0; 
+    padding: 3% 4%;
+    font-family: "Lato", sans-serif;
+    color: #333333;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+/* 2. SECOND OUTER FRAME & CANVAS: 
+      Uses a solid 25px sage green outer shadow projection to form the secondary 
+      border frame layers, keeping your HTML clean and single-nested. */
+.page-canvas {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow: hidden;
+    
+    /* Double Frame Layer Construction:
+       Layer 1: Solid, unblurred 25px sage green outer border band
+       Layer 2: Soft, trailing drop shadow to establish ambient realistic depth */
+    box-shadow: 
+        0 0 0 25px #AABA99, 
+        0 30px 70px rgba(0, 0, 0, 0.22); 
+}
+
+/* Global Section Spacing Constraints */
+.editorial-block {
+    padding: 90px 6%;
+}
+
+/* ==========================================
+   INTERCALATING BACKGROUNDS
+   ========================================== */
+.editorial-block.background-caramel {
+    background-color: #f5ebe0 !important; /* Warm natural cream background */
+}
+
+.editorial-block.background-turquoise {
+    background-color: #cbded2 !important; /* Beautiful pale sage section background */
+}
+
+/* ==========================================
+   BRANDING & HEADERS
+   ========================================== */
+.logo-bar {
+    background: #064435;
+    text-align: center;
+    padding: 30px 20px 15px 20px;
+}
+
+.logo-bar img {
+    height: 50px;
+    object-fit: contain;
+}
+
+.navbar {
+    background: #064435;
+    text-align: center;
+    padding: 15px 10px 30px 10px;
+}
+
+.navbar ul {
+    list-style: none;
+}
+
+.navbar li {
+    display: inline-block;
+    margin: 0 25px;
+}
+
+.navbar a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ffffff;
+}
+
+/* ==========================================
+   TYPOGRAPHY CONTRAST & READABILITY
+   ========================================== */
+h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #064435;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
 }
 
 p {
-  font-size: 1.2rem;
+    font-family: "Lato", sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #2c3e35; /* Dark graphite-green tint for high font clarity */
+}
+
+/* ==========================================
+   VIDEO CONTAINER & SHORT BANNER OVERLAY
+   ========================================== */
+.banner-video-short {
+    position: relative;
+    width: 100%;
+    height: 520px; 
+    overflow: hidden;
+}
+
+.video-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.video-dark-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.12);
+    z-index: 1;
+}
+
+/* Crisp white floating card overlay tailored for the banner */
+.overlay-top-left-card {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 40px;
+    border-radius: 0px;
+    max-width: 420px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.overlay-top-left-card h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #064435;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.overlay-top-left-card p {
+    font-family: "Satisfy", cursive;
+    font-size: 1.25rem;
+    color: #7a6552;
+}
+
+/* ==========================================
+   ABOUT SPLIT MODULE
+   ========================================== */
+.about-grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-image-box img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border: 15px solid #ffffff; /* Crisp white frame border contrast */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.section-subtitle {
+    display: block;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #556b5c;
+    margin-bottom: 10px;
+}
+
+.about-text-box h2 {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.designer-title {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    color: #7a6552;
+}
+
+.btn-editorial {
+    display: inline-block;
+    padding: 14px 35px;
+    background: #064435;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 25px;
+    transition: background 0.3s;
+}
+
+.btn-editorial:hover {
+    background: #125c4a;
+}
+
+/* ==========================================
+   SERVICES CARDS LINK CONTENT (PERFECTLY PROPORTIONED EXPANSION)
+   ========================================== */
+.services-header h2 {
+    margin-bottom: 40px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px; 
+    max-width: 1420px; /* CHANGED from 1400px to 1420px: Expands column horizontal footprint (FATTER) */
+    margin: 0 auto;
+}
+
+.service-card {
+    display: block;
+    text-decoration: none;
+}
+
+.card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 415px; /* CHANGED from 390px to 415px: Gives a little extra vertical canvas height (TALLER) */
+    overflow: hidden;
+    border: 12px solid #ffffff; /* White mat protection frame */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card-image-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(6, 68, 53, 0.95) 0%, rgba(0,0,0,0.05) 75%);
+}
+
+.card-overlay-title {
+    position: absolute;
+    bottom: 25px;
+    left: 20px;
+    right: 20px;
+    z-index: 2;
+    color: #ffffff;
+}
+
+.card-overlay-title h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.card-overlay-title span {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+    display: block;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.service-card:hover .card-image-wrapper img {
+    transform: scale(1.03);
+}
+
+/* ==========================================
+   SLIDER (NON-STOP CONTINUOUS LOOP)
+   ========================================== */
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    background: #ffffff;
+    padding: 35px 0;
+}
+
+.slider {
+    display: flex;
+    gap: 16px;
+    width: max-content;
+    animation: continuousPan 38s linear infinite;
+}
+
+.slider img {
+    width: 290px;
+    height: 200px;
+    object-fit: cover;
+    border: 8px solid #ffffff;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+}
+
+@keyframes continuousPan {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ==========================================
+   COMPACT PHOTO STORIES GRID
+   ========================================= */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.photo-gallery img {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+    border: 10px solid #ffffff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease;
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.02);
+}
+
+/* ==========================================
+   TESTIMONIAL GRID DESIGN
+   ========================================== */
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: #ffffff;
+    padding: 45px 30px;
+    flex: 1;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.quote-icon {
+    font-size: 3rem;
+    color: #cbded2;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+}
+
+.author {
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #7a6552;
+}
+
+/* ==========================================
+   FOOTER MODULE
+   ========================================== */
+footer {
+    background: #064435;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* ==========================================
+   RESPONSIVE LAYOUT MEDIA BREAKPOINTS
+   ========================================== */
+@media (max-width: 1200px) {
+    .services-grid, .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    body.site-frame {
+        padding: 0;
+    }
+    .about-grid-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+    .banner-video-short {
+        height: 420px;
+    }
+    .overlay-top-left-card {
+        top: 25px;
+        left: 25px;
+        right: 25px;
+        max-width: none;
+    }
+    .testimonial-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .services-grid, .photo-gallery {
+        grid-template-columns: 1fr;
+    }
+    .editorial-block {
+        padding: 60px 4%;
+    }
+    .banner-video-short {
+        height: 320px;
+    }
+    .overlay-top-left-card {
+        padding: 20px;
+    }
+    .overlay-top-left-card h1 {
+        font-size: 1.8rem;
+    }
 }
