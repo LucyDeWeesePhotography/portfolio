@@ -22,3 +22,28 @@ window.addEventListener('resize', () => {
         document.body.style.overflow = 'auto';
     }
 });
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('familyVideo');
+    const playButton = document.getElementById('playButton');
+
+    if (video && playButton) {
+        // When the custom overlay button is clicked
+        playButton.addEventListener('click', () => {
+            video.play();
+            playButton.classList.add('is-hidden'); // Smoothly hides the button
+        });
+
+        // If the user pauses using native video player controls, bring the button back
+        video.addEventListener('pause', () => {
+            playButton.classList.remove('is-hidden');
+        });
+
+        // Safetynet: If video plays by any other means, hide the button
+        video.addEventListener('play', () => {
+            playButton.classList.add('is-hidden');
+        });
+    }
+});
