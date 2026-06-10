@@ -61,7 +61,7 @@ body.site-frame {
 }
 
 .logo-bar img {
-    height: 50px;
+    height: 100px;
     object-fit: contain;
 }
 
@@ -92,11 +92,33 @@ body.site-frame {
     text-transform: uppercase;
     font-size: 0.85rem;
     letter-spacing: 2px;
-    transition: color 0.3s;
+    position: relative; /* Required for the absolute underline */
+    padding-bottom: 5px; /* Gives the underline some breathing room */
+    transition: color 0.3s ease;
 }
 
 .navbar a:hover {
-    color: #ffffff;
+    color: #ffd700;
+}
+
+/* Create the underline using a pseudo-element */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0); /* Starts at zero width */
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffd700;
+    box-shadow: 0 0 8px #5f5103; /* Makes the underline glow too! */
+    transform-origin: bottom center;
+    transition: transform 0.3s ease-out;
+}
+
+/* Expand the underline on hover */
+.navbar a:hover::after {
+    transform: scaleX(1);
 }
 
 /* ==========================================
@@ -148,11 +170,11 @@ p {
     top: 50px;
     left: 50px;
     z-index: 2;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(253, 252, 252, 0.95);
     padding: 30px 40px;
     border-radius: 0px;
     max-width: 420px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(118, 117, 117, 0.15);
 }
 
 .overlay-top-left-card h1 {
@@ -444,14 +466,14 @@ footer p {
     max-width: 520px;
     margin: 0 auto;
     padding: 0 10px;
-    position: relative; /* This allows the button to anchor to the video frame */
+    position: relative; /* Holds the play button right in the center */
 }
 
 .featured-video {
     width: 100%;
     display: block;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
+    aspect-ratio: 4 / 5;  /* Your stunning vertical frame layout */
+    object-fit: cover;    /* Forces your cover image/video frame to completely fill the box without gaps */
     border: 12px solid #ffffff;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
@@ -464,17 +486,17 @@ footer p {
     margin-bottom: 35px;
 }
 
-/* Usable Play Button Styling */
+/* Play Button Overlay Styling */
 .video-play-btn {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Keeps it dead center */
+    transform: translate(-50%, -50%); /* Keeps it perfectly centered */
     background: none;
     border: none;
     cursor: pointer;
     padding: 0;
-    width: 80px;  /* Size of your play graphic */
+    width: 80px; 
     height: 80px;
     z-index: 10;
     transition: transform 0.2s ease, opacity 0.3s ease;
@@ -486,15 +508,39 @@ footer p {
     display: block;
 }
 
-/* Slight growth effect when hovered so users know it's interactive */
+/* Subtle interactive scale on hover */
 .video-play-btn:hover {
     transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* Hides the button cleanly when the video runs */
+/* Hides the button seamlessly when playing */
 .video-play-btn.is-hidden {
     opacity: 0;
     pointer-events: none;
+}
+/* ==========================================
+  SOCIAL MEDIA ICONS
+   ========================================== */
+.social-icons {
+    margin-bottom: 15px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 12px;
+}
+
+.social-icons img {
+    width: 38;
+    height: 38px;
+    object-fit: contain;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.85;
+}
+
+.social-icons img:hover {
+    transform: scale(1.15);
+    opacity: 1;
 }
 
 /* ==========================================

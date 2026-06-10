@@ -30,18 +30,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const playButton = document.getElementById('playButton');
 
     if (video && playButton) {
-        // When the custom overlay button is clicked
+        // Clicks the button -> plays the video -> hides the button
         playButton.addEventListener('click', () => {
             video.play();
-            playButton.classList.add('is-hidden'); // Smoothly hides the button
+            playButton.classList.add('is-hidden');
         });
 
-        // If the user pauses using native video player controls, bring the button back
+        // Brings the button back if they pause using browser video controls
         video.addEventListener('pause', () => {
             playButton.classList.remove('is-hidden');
         });
 
-        // Safetynet: If video plays by any other means, hide the button
+        // Fallback: hides the button if they somehow start it without clicking the button itself
         video.addEventListener('play', () => {
             playButton.classList.add('is-hidden');
         });
