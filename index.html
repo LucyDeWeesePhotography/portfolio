@@ -11,16 +11,30 @@
 
     <div class="page-canvas">
 
-        <div class="logo-bar">
-            <img src="./images/lensf-logo.png" alt="Lucy DeWeese Photography Logo">
-        </div>
+        <header class="site-header">
+            <div class="logo-bar">
+                <img src="./images/lensf-logo.png" alt="Lucy DeWeese Photography Logo">
+                
+                <button class="menu-toggle-btn" id="openMenuBtn" aria-label="Open Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
 
-        <nav class="navbar">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
+            <nav class="navbar" id="mobileNavbar">
+    <button class="menu-close-btn" id="closeMenuBtn" aria-label="Close Navigation Menu">&times;</button>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#stories">Portfolio</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+        </header>
 
         <section class="banner-video-short">
             <video autoplay muted loop playsinline class="video-background">
@@ -42,9 +56,9 @@
                 <div class="about-text-box">
                     <span class="section-subtitle">About Me</span>
                     <h2>Hi, I'm Lucy</h2>
-                    <span class="designer-title">Photographer & Storyteller</span>
-                    <p>
-                        I believe every family holds a story worth telling. My goal is to capture genuine emotions, raw connections, and timeless memories that you will treasure forever.
+                    <span class="designer-title">Family Photographer</span>
+                    <p>I believe every family is unique and every season of life is worth remembering. 
+                        My goal is to create timeless photographs that you and your loved ones will treasure for generations.
                     </p>
                     <a href="about.html" class="btn-editorial">More About Me</a>
                 </div>
@@ -61,7 +75,7 @@
                 <div class="services-grid">
                     <a href="family.html" class="service-card">
                         <div class="card-image-wrapper">
-                            <img src="./images/lowe-06.jpg" alt="Family">
+                            <img src="./images/moorefam.jpg" alt="Family">
                             <div class="card-overlay-title">
                                 <h3>Family</h3>
                                 <span>Connection • Togetherness • Real moments</span>
@@ -74,17 +88,17 @@
                             <img src="./images/hammond-11.jpg" alt="Couples">
                             <div class="card-overlay-title">
                                 <h3>Couples</h3>
-                                <span>Love • Natural connection • Storytelling</span>
+                                <span>Engagements  • Weddings • Love Stories</span>
                             </div>
                         </div>
                     </a>
 
                     <a href="portraits.html" class="service-card">
                         <div class="card-image-wrapper">
-                            <img src="./images/boyd-15.jpg" alt="Portraits">
+                            <img src="./images/Rejane.jpg" alt="Portraits">
                             <div class="card-overlay-title">
                                 <h3>Portraits</h3>
-                                <span>Individuals • Headshots • Personal sessions</span>
+                                <span>Individuals • Headshots • Personal Branding</span>
                             </div>
                         </div>
                     </a>
@@ -94,7 +108,7 @@
                             <img src="./images/ALM20.jpg" alt="Milestones">
                             <div class="card-overlay-title">
                                 <h3>Milestones</h3>
-                                <span>Maternity • Graduation • Life changes</span>
+                                <span>Maternity • Graduations • Life changes</span>
                             </div>
                         </div>
                     </a>
@@ -110,36 +124,56 @@
                 <img src="./images/baker-4.jpg" alt="Family photography">
                 <img src="./images/silva-5.jpg" alt="Family photography">
                 <img src="./images/noss-6.jpg" alt="Family photography">
+                <img src="./images/granpas.jpg" alt="Family photography">
+                <img src="./images/family08.jpg" alt="Family photography">
+                <img src="./images/Goyzueta-58.jpg" alt="Family photography">
+                <img src="./images/HFamily-25.jpg" alt="Family photography">
+                <img src="./images/199.jpg" alt="Family photography">
+                <img src="./images/A-J4.jpg" alt="Family photography">
+                <img src="./images/Poto-Family-30.jpg" alt="Family photography">
+
                 <img src="./images/carmen-1.jpg" alt="Family photography">
                 <img src="./images/lewis-2.jpg" alt="Family photography">
                 <img src="./images/cathy-3.jpg" alt="Family photography">
                 <img src="./images/baker-4.jpg" alt="Family photography">
                 <img src="./images/silva-5.jpg" alt="Family photography">
                 <img src="./images/noss-6.jpg" alt="Family photography">
+                <img src="./images/granpas.jpg" alt="Family photography">
+                <img src="./images/family08.jpg" alt="Family photography">
+                <img src="./images/Goyzueta-58.jpg" alt="Family photography">
+                <img src="./images/HFamily-25.jpg" alt="Family photography">
+                <img src="./images/199.jpg" alt="Family photography">
+                <img src="./images/A-J4.jpg" alt="Family photography">
+                <img src="./images/Poto-Family-30.jpg" alt="Family photography">
             </div>
         </div>
 
-        <section class="editorial-block background-caramel">
-            <div class="services-header">
-                <h2>Family Stories</h2>
-                <p style="text-align: center; font-style: italic; font-size: 0.9rem; color: #66574a; margin-top: -10px; margin-bottom: 30px;">Click an image to look inside the collection</p>
-            </div>
-            <div class="photo-gallery">
-                <img src="./images/ferraz-01.jpg" alt="Family photography">
-                <img src="./images/jack-02.jpg" alt="Family photography">
-                <img src="./images/fernades-03.jpg" alt="Family photography">
-                <img src="./images/yeaman-04.jpg" alt="Family photography">
-                <img src="./images/macedo-05.jpg" alt="Family photography">
-                <img src="./images/lowe-06.jpg" alt="Family photography">
-                <img src="./images/bolden-07.jpg" alt="Family photography">
-                <img src="./images/boyd-08.jpg" alt="Family photography">
-                <img src="./images/matthews-09.jpg" alt="Family photography">
-                <img src="./images/coates-10.jpg" alt="Family photography">
-                <img src="./images/hammond-11.jpg" alt="Family photography">
-                <img src="./images/bolden-12.jpg" alt="Family photography">
-            </div>
-        </section>
+   <section class="editorial-block background-caramel">
+    
+    <div class="services-header">
+        <span class="section-subtitle">Recent Work</span>
+        <h2>Latest Family Session</h2>
+        <p class="video-caption">Click play to watch a recent family story.</p>
+    </div>
 
+    <div class="video-showcase">
+
+        <video
+            class="featured-video"
+            controls
+            preload="metadata"
+            poster="./images/adriana-cover.jpg">
+
+            <source src="./images/Adriana_video.mov" type="video/mp4">
+
+            Your browser does not support video playback.
+        </video>
+
+    </div>
+
+</section>
+
+</section>
         <section class="editorial-block background-turquoise">
             <div class="services-header">
                 <span class="section-subtitle">Client Love</span>
@@ -166,11 +200,27 @@
         </section>
 
         <footer>
-            <div class="footer-content">
-                <p>© 2026 Lucy DeWeese Photography</p>
-            </div>
+            <footer>
+    <div class="footer-content">
+
+        <div class="social-icons">
+            <a href="https://www.facebook.com/YOURFACEBOOKPAGE" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="https://www.instagram.com/YOURINSTAGRAM" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+
+        <p>© 2026 Lucy DeWeese Photography</p>
+
+    </div>
+
         </footer>
 
     </div> 
+
+    <script src="script.js"></script>
 </body>
 </html>

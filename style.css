@@ -9,7 +9,6 @@
     box-sizing: border-box;
 }
 
-/* 1. FIRST OUTER FRAME: Your main cream/caramel viewport outer background */
 body.site-frame {
     background-color: #f5ebe0; 
     padding: 3% 4%;
@@ -20,24 +19,16 @@ body.site-frame {
     justify-content: center;
 }
 
-/* 2. SECOND OUTER FRAME & CANVAS: 
-      Uses a solid 25px sage green outer shadow projection to form the secondary 
-      border frame layers, keeping your HTML clean and single-nested. */
 .page-canvas {
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
     overflow: hidden;
-    
-    /* Double Frame Layer Construction:
-       Layer 1: Solid, unblurred 25px sage green outer border band
-       Layer 2: Soft, trailing drop shadow to establish ambient realistic depth */
     box-shadow: 
         0 0 0 25px #AABA99, 
         0 30px 70px rgba(0, 0, 0, 0.22); 
 }
 
-/* Global Section Spacing Constraints */
 .editorial-block {
     padding: 90px 6%;
 }
@@ -46,25 +37,37 @@ body.site-frame {
    INTERCALATING BACKGROUNDS
    ========================================== */
 .editorial-block.background-caramel {
-    background-color: #f5ebe0 !important; /* Warm natural cream background */
+    background-color: #f5ebe0 !important;
 }
 
 .editorial-block.background-turquoise {
-    background-color: #cbded2 !important; /* Beautiful pale sage section background */
+    background-color: #cbded2 !important;
 }
 
 /* ==========================================
-   BRANDING & HEADERS
+   BRANDING, HEADER & DESKTOP NAVIGATION
    ========================================== */
+.site-header {
+    width: 100%;
+    position: relative;
+    z-index: 100;
+}
+
 .logo-bar {
     background: #064435;
     text-align: center;
     padding: 30px 20px 15px 20px;
+    position: relative;
 }
 
 .logo-bar img {
     height: 50px;
     object-fit: contain;
+}
+
+/* Hidden on desktop screen sizes by default */
+.menu-toggle-btn, .menu-close-btn {
+    display: none;
 }
 
 .navbar {
@@ -113,7 +116,7 @@ p {
     font-family: "Lato", sans-serif;
     font-size: 1.05rem;
     line-height: 1.8;
-    color: #2c3e35; /* Dark graphite-green tint for high font clarity */
+    color: #2c3e35;
 }
 
 /* ==========================================
@@ -140,7 +143,6 @@ p {
     z-index: 1;
 }
 
-/* Crisp white floating card overlay tailored for the banner */
 .overlay-top-left-card {
     position: absolute;
     top: 50px;
@@ -185,7 +187,7 @@ p {
     width: 100%;
     height: 520px;
     object-fit: cover;
-    border: 15px solid #ffffff; /* Crisp white frame border contrast */
+    border: 15px solid #ffffff;
     box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
 
@@ -232,7 +234,7 @@ p {
 }
 
 /* ==========================================
-   SERVICES CARDS LINK CONTENT (PERFECTLY PROPORTIONED EXPANSION)
+   SERVICES CARDS LINK CONTENT
    ========================================== */
 .services-header h2 {
     margin-bottom: 40px;
@@ -242,7 +244,7 @@ p {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px; 
-    max-width: 1420px; /* CHANGED from 1400px to 1420px: Expands column horizontal footprint (FATTER) */
+    max-width: 1420px;
     margin: 0 auto;
 }
 
@@ -254,9 +256,9 @@ p {
 .card-image-wrapper {
     position: relative;
     width: 100%;
-    height: 415px; /* CHANGED from 390px to 415px: Gives a little extra vertical canvas height (TALLER) */
+    height: 415px;
     overflow: hidden;
-    border: 12px solid #ffffff; /* White mat protection frame */
+    border: 12px solid #ffffff;
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
@@ -319,7 +321,7 @@ p {
     display: flex;
     gap: 16px;
     width: max-content;
-    animation: continuousPan 38s linear infinite;
+    animation: continuousPan 70s linear infinite;
 }
 
 .slider img {
@@ -414,6 +416,55 @@ footer p {
     letter-spacing: 1px;
 }
 
+/*video*/
+.reel-video-wrapper {
+    max-width: 900px;
+    margin: 40px auto 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.reel-video-wrapper video {
+    width: 100%;
+    max-width: 420px;
+    
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+
+    border: 12px solid #ffffff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+    background: #000;
+}
+/* ==========================================
+   FEATURED VIDEO SHOWCASE
+   ========================================== */
+
+.video-showcase {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.featured-video {
+   width: 100%;
+    display: block;
+
+    aspect-ratio: 4 / 5;  /* IMPORTANT for your vertical reel */
+    object-fit: cover;
+
+    border: 12px solid #ffffff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.video-caption {
+    text-align: center;
+    font-style: italic;
+    color: #7a6552;
+    margin-top: 10px;
+    margin-bottom: 35px;
+}
+
 /* ==========================================
    RESPONSIVE LAYOUT MEDIA BREAKPOINTS
    ========================================== */
@@ -427,21 +478,117 @@ footer p {
     body.site-frame {
         padding: 0;
     }
+    
     .about-grid-container {
         grid-template-columns: 1fr;
         gap: 45px;
     }
+    
     .banner-video-short {
         height: 420px;
     }
+    
     .overlay-top-left-card {
         top: 25px;
         left: 25px;
         right: 25px;
         max-width: none;
     }
+    
     .testimonial-container {
         flex-direction: column;
+    }
+
+    /* ==========================================
+       MOBILE FULL-SCREEN HAMBURGER SYSTEM
+       ========================================== */
+    /* 1. Show Hamburger Trigger Button on right edge */
+    .menu-toggle-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: absolute;
+        right: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        width: 30px;
+        height: 21px;
+        cursor: pointer;
+        z-index: 101;
+    }
+    
+    .menu-toggle-btn .bar {
+        width: 100%;
+        height: 3px;
+        background-color: #ffffff;
+        border-radius: 2px;
+        transition: all 0.3s;
+    }
+
+    /* 2. Style full screen rich brown overlay card background drawer */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #4a3e3d; /* Editorial Earthy Brown match from samples */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        
+        /* Slide & opacity transition animation */
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+        z-index: 200;
+    }
+
+    /* When mobile navigation activation layout state is clicked */
+    .navbar.nav-active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    /* Format navigation link arrays stacking downward */
+    .navbar ul {
+        display: block;
+        width: 100%;
+    }
+
+    .navbar li {
+        display: block;
+        margin: 35px 0;
+    }
+
+    .navbar a {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2.2rem; /* Clean large classic font options */
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        color: #f5ebe0;
+    }
+
+    /* 3. Style Mobile Close Button Frame (X) */
+    .menu-close-btn {
+        display: block;
+        position: absolute;
+        top: 25px;
+        right: 30px;
+        background: none;
+        border: none;
+        color: #f5ebe0;
+        font-size: 3.5rem;
+        line-height: 1;
+        cursor: pointer;
+        font-weight: 300;
+        transition: color 0.2s;
     }
 }
 
@@ -449,16 +596,34 @@ footer p {
     .services-grid, .photo-gallery {
         grid-template-columns: 1fr;
     }
+    
     .editorial-block {
         padding: 60px 4%;
     }
+    
     .banner-video-short {
         height: 320px;
     }
+    
     .overlay-top-left-card {
         padding: 20px;
     }
+    
     .overlay-top-left-card h1 {
         font-size: 1.8rem;
+    }
+    
+    .slider img {
+        width: 220px;
+        height: 150px;
+    }
+
+       .reel-video-wrapper {
+        padding: 10px 4%;
+    }
+
+    .reel-video-wrapper video {
+        max-width: 100%;
+        border-width: 8px;
     }
 }
