@@ -567,11 +567,22 @@ footer p {
     }
     
     .overlay-top-left-card {
-        top: 25px;
-        left: 25px;
-        right: 25px;
-        max-width: none;
+        top: 20px;
+        left: 20px;
+        right: auto;              /* IMPORTANT: prevents stretching */
+        max-width: 240px;        /* keeps it small */
+        padding: 15px 18px;
     }
+
+    .overlay-top-left-card h1 {
+        font-size: 1.2rem;       /* smaller for mobile */
+        line-height: 1.2;
+    }
+
+    .overlay-top-left-card p {
+        font-size: 0.9rem;
+    }
+
     
     .testimonial-container {
         flex-direction: column;
