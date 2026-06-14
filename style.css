@@ -749,3 +749,34 @@ footer p {
         border-width: 8px;
     }
 }
+/* ==========================================
+   ABOUT SECTION MOBILE ONLY
+   ========================================== */
+@media (max-width: 600px) {
+
+    .about-grid-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-image-box {
+        display: flex;
+        justify-content: center;
+    }
+
+    .about-image-box img {
+        width: 70%;
+        max-width: 240px;
+        height: auto;
+        object-fit: contain;
+        border: 10px solid #ffffff;
+    }
+
+    .about-text-box {
+        text-align: center;
+    }
+
+    .about-text-box h2 {
+        text-align: center;
+    }
+}
