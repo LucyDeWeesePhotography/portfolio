@@ -661,7 +661,7 @@ footer p {
     }
 } */
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
 
     .overlay-top-left-card {
         top: 10px;
@@ -680,7 +680,162 @@ footer p {
     .overlay-top-left-card p {
         font-size: 0.65rem;
     }
+} */
+
+
+/* ==========================================
+   FINAL RESPONSIVE OVERLAY (ABSOLUTE CENTER)
+   ========================================== */
+
+/* Tablet Screens (Max-width: 900px) */
+@media (max-width: 900px) {
+    .overlay-top-left-card {
+        top: 25px !important;
+        left: 25px !important;
+        width: 450px !important;  
+        height: 100px !important; 
+    }
+
+    .overlay-flip-inner {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .overlay-front,
+    .overlay-back {
+        width: 100% !important;
+        height: 100% !important;
+        position: absolute !important;
+        inset: 0 !important;
+        padding: 0 45px !important; 
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+        
+        -webkit-backface-visibility: hidden !important;
+        backface-visibility: hidden !important;
+    }
+
+    .overlay-front .brand-name {
+        font-size: 1.55rem !important; 
+        line-height: 1.1 !important;
+        white-space: nowrap !important;
+    }
+
+    .overlay-front .brand-title {
+        font-size: 0.6rem !important;
+        letter-spacing: 3px !important;
+        margin-top: 4px !important;
+    }
+
+    .overlay-back {
+        transform: rotateY(180deg) !important;
+    }
+
+    .overlay-back p {
+        font-family: inherit !important;
+        text-transform: uppercase !important;
+        font-size: 0.75rem !important; 
+        letter-spacing: 3px !important; 
+        line-height: 1.4 !important;
+        text-align: center !important;
+        width: 100% !important;
+        white-space: normal !important; 
+        margin: 0 auto !important; 
+    }
 }
+
+/* Mobile Screens (Max-width: 600px) */
+@media (max-width: 600px) {
+    .overlay-top-left-card {
+        top: 15px !important;
+        left: 15px !important;
+        width: 340px !important;  
+        height: 75px !important;   
+    }
+
+    .overlay-flip-inner {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .overlay-front {
+        width: 100% !important;
+        height: 100% !important;
+        position: absolute !important;
+        inset: 0 !important;
+        padding: 0 35px !important; 
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+        
+        -webkit-backface-visibility: hidden !important;
+        backface-visibility: hidden !important;
+    }
+
+    /* THE BACK SIDE CONTAINER PANEL - EXPLICIT FORCE-CENTER */
+    .overlay-back {
+        width: 100% !important;
+        height: 100% !important;
+        position: absolute !important;
+        inset: 0 !important;
+        padding: 0 !important; /* Clears side asymmetries */
+        
+        /* Forces structural flex-centering inside the flipped container coordinate space */
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important; 
+        align-items: center !important;    
+        box-sizing: border-box !important;
+        
+        transform: rotateY(180deg) !important;
+        -webkit-backface-visibility: hidden !important;
+        backface-visibility: hidden !important;
+        
+        background: rgba(255, 255, 255, 0.10) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        border-left: 2px solid rgba(255, 255, 255, 0.35) !important;
+    }
+
+    .overlay-front .brand-name {
+        font-size: 1.15rem !important; 
+        line-height: 1.1 !important;
+        white-space: nowrap !important;
+    }
+
+    .overlay-front .brand-title {
+        font-size: 0.48rem !important;
+        letter-spacing: 2px !important;
+        margin-top: 2px !important;
+    }
+
+    /* BACK TEXT BLOCK LAYOUT */
+    .overlay-back p {
+        font-family: inherit !important; 
+        text-transform: uppercase !important; 
+        font-size: 0.52rem !important;     
+        letter-spacing: 2px !important;   
+        line-height: 1.3 !important;      
+        
+        /* Confines text bounds cleanly to build a tight, floating center block */
+        width: 80% !important; 
+        max-width: 220px !important;      
+        white-space: normal !important;   
+        text-align: center !important;
+        
+        /* Erases local alignment variations */
+        margin: 0 !important; 
+        color: #ffffff !important;
+    }
+}
+
+
+
 
 @media (max-width: 900px) {
     body.site-frame {
