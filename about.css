@@ -169,13 +169,12 @@ p {
    ========================================== */
 .editorial-magazine-block {
     display: grid;
-    grid-template-columns: 45% 55%;
+    grid-template-columns: 45% 55%; 
     background-color: #f5ebe0; 
     position: relative;
     min-height: 100vh;
 }
 
-/* Left Stack Images & Video */
 .magazine-left-stack {
     display: flex;
     flex-direction: column;
@@ -192,7 +191,7 @@ p {
 .stack-img-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; 
     object-position: center;
     display: block;
 }
@@ -392,7 +391,7 @@ p {
 }
 
 .brand-social-img {
-    width: 32px;  /* Clean desktop thumbnail presentation matching your mockup */
+    width: 32px;  
     height: 32px;
     object-fit: contain;
     display: block;
@@ -406,9 +405,9 @@ p {
     font-weight: 400;
 }
 
-/* ==========================================
-   RESPONSIVE DESIGN BREAKPOINTS
-   ========================================== */
+/* =======================================================
+   RESPONSIVE DESIGN BREAKPOINTS - ADJUSTMENTS ONLY HERE
+   ======================================================= */
 @media (max-width: 1200px) {
     .editorial-badge {
         display: none; 
@@ -416,65 +415,121 @@ p {
 }
 
 @media (max-width: 1024px) {
-    .editorial-magazine-block {
-        grid-template-columns: 40% 60%;
+    .magazine-right-panel {
+        padding: 40px 6%;
     }
     
     .magazine-title {
-        font-size: 3.2rem;
+        font-size: 2.5rem;
     }
     
     .magazine-title span {
-        font-size: 2.6rem;
+        font-size: 2.2rem;
     }
 }
 
+/* TABLET AND MOBILE ONLY ADAPTATIONS */
 @media (max-width: 768px) {
     body.site-frame {
-        padding: 0;
+        padding: 0; 
     }
 
-    .minimal-header {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-
+    /* Keep layout strictly side-by-side */
     .editorial-magazine-block {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 45% 55% !important; 
+        height: calc(100vh - 80px); /* Binds height cleanly so text scrolls and image column scales */
     }
 
+    /* Images scale down layout proportions beautifully */
     .magazine-left-stack {
-        flex-direction: row; 
-        height: 220px;
+        height: 100%;
     }
 
     .stack-img-wrapper {
+        height: 33.333% !important; 
+        min-height: auto !important; 
+    }
+
+    .stack-img-wrapper img {
+        width: 100%;
         height: 100%;
-        flex: 1;
-        min-height: auto;
+        object-fit: cover; /* Retains crisp layout composition crops */
     }
 
+    /* Enables right panel scrolling independent of image height anchor shifts */
     .magazine-right-panel {
-        padding: 50px 6% 60px 6%;
+        padding: 25px 5%;
+        overflow-y: auto; 
+        height: 100%;
+        justify-content: flex-start;
     }
 
-    .magazine-content-wrapper {
-        max-width: 100%;
-        text-align: left; 
+    /* Typography Scale Down Adjustment */
+    .magazine-title {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
     }
-    
-    .magazine-title, .timeline-heading {
-        text-align: center;
+
+    .magazine-title span {
+        font-size: 1.6rem;
+    }
+
+    .magazine-bio-text p.lead-paragraph {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+
+    p {
+        font-size: 0.9rem;
+        line-height: 1.6;
     }
 
     .decorative-line-container {
-        margin: 25px auto;
+        height: 35px;
+        margin: 15px 0;
+    }
+
+    .timeline-heading {
+        font-size: 1.4rem;
+        margin: 20px 0 10px 0;
+    }
+
+    .timeline-year {
+        font-size: 1.1rem;
+    }
+
+    .magazine-connect {
+        margin-top: 20px;
+        padding-top: 15px;
     }
 
     .connect-links {
-        justify-content: center;
         flex-direction: column;
-        gap: 12px;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .minimal-header {
+        padding: 10px 4% !important;
+    }
+    
+    .logo-bar img {
+        height: 60px;
+    }
+}
+
+/* ULTRA SMALL PHONES */
+@media (max-width: 480px) {
+    .editorial-magazine-block {
+        grid-template-columns: 43% 57% !important; 
+    }
+    
+    .magazine-title {
+        font-size: 1.3rem;
+    }
+    
+    .magazine-title span {
+        font-size: 1.2rem;
     }
 }
