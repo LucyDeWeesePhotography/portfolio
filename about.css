@@ -1,0 +1,480 @@
+/* ==========================================
+   RESET & INDEPENDENT SYSTEM BASICS
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.site-frame {
+    background-color: #f5ebe0; 
+    padding: 3% 4%;
+    font-family: "Lato", sans-serif;
+    color: #333333;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.page-canvas {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 
+        0 0 0 25px #AABA99, 
+        0 30px 70px rgba(0, 0, 0, 0.22); 
+}
+
+/* Base Typographic Constants */
+p {
+    font-family: "Lato", sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #2c3e35;
+}
+
+.section-subtitle {
+    display: block;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #556b5c;
+    margin-bottom: 10px;
+}
+
+/* Timeline Architecture Headers */
+.timeline-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #064435;
+    margin: 35px 0 20px 0;
+    text-align: left;
+}
+
+.timeline-block {
+    position: relative;
+    margin-bottom: 18px;
+}
+
+.timeline-year {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #7a6552;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   INTERACTIVE STORY EXPANSION TOGGLE RULES
+   ========================================== */
+.story-toggle-btn {
+    background: transparent;
+    border: 1px solid #064435;
+    color: #064435;
+    padding: 12px 28px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin: 25px 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.story-toggle-btn:hover {
+    background: #064435;
+    color: #ffffff;
+}
+
+.full-story-hidden {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.4s ease;
+}
+
+.full-story-visible {
+    max-height: 2000px; 
+    opacity: 1;
+    overflow: visible;
+    transition: max-height 0.8s ease-in, opacity 0.6s ease;
+}
+
+.full-story-hidden p,
+.full-story-visible p {
+    margin-bottom: 18px;
+}
+
+/* ==========================================
+   HEADER & NAVIGATION CONTROLS
+   ========================================== */
+.site-header {
+    width: 100%;
+    position: relative;
+    z-index: 100;
+}
+
+.logo-bar {
+    background: #064435;
+    position: relative;
+}
+
+.logo-bar img {
+    height: 100px;
+    object-fit: contain;
+}
+
+.minimal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 4% !important;
+}
+
+.back-home-nav {
+    display: block;
+}
+
+.nav-back-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-back-link:hover {
+    color: #ffd700;
+}
+
+/* ==========================================
+   EDITORIAL ASYMMETRICAL MAGAZINE LAYOUT
+   ========================================== */
+.editorial-magazine-block {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    background-color: #f5ebe0; 
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Left Stack Images & Video */
+.magazine-left-stack {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.stack-img-wrapper {
+    width: 100%;
+    height: 33.333vh; 
+    min-height: 300px;
+    overflow: hidden;
+}
+
+.stack-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Right Content Panel */
+.magazine-right-panel {
+    padding: 80px 10% 80px 12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+/* Overlapping Circular Emblem Accent */
+.editorial-badge {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 160px;
+    background-color: #f5ebe0;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    box-shadow: -10px 0 20px rgba(0, 0, 0, 0.02);
+    padding: 15px;
+    text-align: center;
+    border: 1px dashed rgba(122, 101, 82, 0.25);
+}
+
+.badge-brand {
+    font-family: 'Satisfy', cursive;
+    font-size: 1.2rem;
+    color: #064435;
+    line-height: 1.2;
+}
+
+.badge-brand-sub {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+    color: #064435;
+    margin-top: 2px;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.badge-established {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    color: #7a6552;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+/* Typography Elements */
+.magazine-content-wrapper {
+    max-width: 580px;
+    width: 100%;
+}
+
+.magazine-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #064435;
+    line-height: 0.9;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.magazine-title span {
+    display: block;
+    font-family: 'Satisfy', cursive;
+    font-size: 3.2rem;
+    font-weight: 400;
+    color: #7a6552;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-top: 8px;
+}
+
+/* Divider Elements */
+.decorative-line-container {
+    width: 1px;
+    height: 80px;
+    background-color: rgba(6, 68, 53, 0.2);
+    margin: 30px 0;
+    position: relative;
+}
+
+.line-dot {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #7a6552;
+    border-radius: 50%;
+}
+
+.magazine-bio-text p {
+    margin-bottom: 22px;
+}
+
+.magazine-bio-text p.lead-paragraph {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #064435;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+/* Contact Area within panel */
+.magazine-connect {
+    margin-top: 50px;
+    padding-top: 35px;
+    border-top: 1px dashed rgba(122, 101, 82, 0.3);
+}
+
+.magazine-connect h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #064435;
+    margin-bottom: 15px;
+}
+
+.connect-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 25px;
+}
+
+.connect-links a {
+    color: #7a6552;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: color 0.2s ease;
+}
+
+.connect-links a:hover {
+    color: #064435;
+}
+
+.social-inline {
+    display: inline-flex;
+    gap: 15px;
+}
+
+.social-inline a {
+    font-size: 1rem;
+}
+
+/* ==========================================
+   BRAND MATCHED HOME-STYLE FOOTER BLOCK
+   ========================================== */
+.branded-site-footer {
+    background-color: #064435;
+    text-align: center;
+    padding: 30px 20px 25px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.footer-social-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand-social-icon-link {
+    display: inline-block;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.brand-social-icon-link:hover {
+    transform: scale(1.08);
+    opacity: 0.95;
+}
+
+.brand-social-img {
+    width: 32px;  /* Clean desktop thumbnail presentation matching your mockup */
+    height: 32px;
+    object-fit: contain;
+    display: block;
+}
+
+.branded-site-footer .footer-copyright-text p {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: "Lato", sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================== */
+@media (max-width: 1200px) {
+    .editorial-badge {
+        display: none; 
+    }
+}
+
+@media (max-width: 1024px) {
+    .editorial-magazine-block {
+        grid-template-columns: 40% 60%;
+    }
+    
+    .magazine-title {
+        font-size: 3.2rem;
+    }
+    
+    .magazine-title span {
+        font-size: 2.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body.site-frame {
+        padding: 0;
+    }
+
+    .minimal-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .editorial-magazine-block {
+        grid-template-columns: 1fr; 
+    }
+
+    .magazine-left-stack {
+        flex-direction: row; 
+        height: 220px;
+    }
+
+    .stack-img-wrapper {
+        height: 100%;
+        flex: 1;
+        min-height: auto;
+    }
+
+    .magazine-right-panel {
+        padding: 50px 6% 60px 6%;
+    }
+
+    .magazine-content-wrapper {
+        max-width: 100%;
+        text-align: left; 
+    }
+    
+    .magazine-title, .timeline-heading {
+        text-align: center;
+    }
+
+    .decorative-line-container {
+        margin: 25px auto;
+    }
+
+    .connect-links {
+        justify-content: center;
+        flex-direction: column;
+        gap: 12px;
+    }
+}
