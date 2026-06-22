@@ -1,0 +1,163 @@
+/* Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    /* Use a color slightly darker than the banner text background for contrast */
+    background-color: #F0F0E6; 
+    color: #143323; /* Deep Green from the banner */
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Banner Container for Mobile-First Display */
+.banner-container {
+    width: 100%;
+    /* Increase height slightly for better visibility of detail on mobile */
+    min-height: 300px;
+    height: auto;
+    background-color: #F9F6EE; /* Off-White background from the banner graphic */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid #DCA534; /* Gold dividing line */
+}
+
+/* Banner Image (Image_8.png) */
+/* Forces proportional scaling so it fills width without distortion */
+.banner-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Keeps whole image visible */
+    display: block;
+}
+
+/* Main Content Container */
+main.content-container {
+    width: 100%;
+    max-width: 600px; /* Constraints readability for mobile views */
+    margin: 0 auto;
+    padding: 32px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Section Styling */
+.thank-you-section,
+.gallery-section,
+.download-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* If you have the image from Image_10.png, this text title is redundant and messy */
+.thank-you-section h1 {
+    display: none; /* Explicitly hide the plain text title */
+}
+
+/* Target the plain-text Thank You paragraphs (Image_10.png lower text) */
+.thank-you-section p {
+    font-size: 1rem;
+    text-align: left; /* Keep left-aligned for reading flow */
+    color: #333333; /* Dark Gray for comfortable reading */
+    margin-bottom: 16px;
+    max-width: 90%; /* Center the text block slightly on mobile */
+}
+
+/* GALLERY GRID: Adaptive 2-Column Mobile Masonry */
+.gallery-section h2 {
+    font-size: 1.5rem;
+    color: #143323; /* Deep Green */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.gallery-grid {
+    column-count: 2; /* 2 columns on mobile */
+    column-gap: 12px;
+    width: 100%;
+}
+
+.gallery-item {
+    break-inside: avoid;
+    display: block;
+    margin-bottom: 12px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* DOWNLOAD SECTION */
+.download-section {
+    margin-top: 40px;
+    background-color: #E6EFE6; /* Pale Green tint from the theme */
+    padding: 24px 16px;
+    border-radius: 8px;
+    border: 1px solid #DCA534; /* Gold border */
+}
+
+.download-section p {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #A61C11; /* Deep Red accent */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    width: 100%; /* Full width button on mobile for easy tapping */
+    max-width: 300px;
+    transition: background-color 0.2s ease;
+}
+
+.download-btn:hover, .download-btn:active {
+    background-color: #82140B; /* Darker red on hover */
+}
+
+footer {
+    text-align: center;
+    padding: 24px 16px;
+    font-size: 0.8rem;
+    color: #8C8275;
+}
+
+/* RESPONSIVE BREAKPOINT FOR LARGER SCREENS (Desktops) */
+@media screen and (min-width: 1024px) {
+    main.content-container {
+        max-width: 900px; /* Allow wider layout on desktop */
+        padding: 40px;
+    }
+    .gallery-grid {
+        column-count: 3; /* Switch to 3 columns on desktop for better fit */
+    }
+    .banner-container {
+        min-height: 400px; /* Give the banner more height on desktop */
+    }
+}
