@@ -7,41 +7,37 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    /* Use a color slightly darker than the banner text background for contrast */
     background-color: #F0F0E6; 
-    color: #143323; /* Deep Green from the banner */
+    color: #143323; /* Deep Green */
     line-height: 1.6;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Banner Container for Mobile-First Display */
+/* Banner Container */
 .banner-container {
     width: 100%;
-    /* Increase height slightly for better visibility of detail on mobile */
     min-height: 300px;
     height: auto;
-    background-color: #F9F6EE; /* Off-White background from the banner graphic */
+    background-color: #F9F6EE; 
     display: flex;
     flex-direction: column;
     align-items: center;
     border-bottom: 2px solid #DCA534; /* Gold dividing line */
 }
 
-/* Banner Image (Image_8.png) */
-/* Forces proportional scaling so it fills width without distortion */
 .banner-image {
     width: 100%;
     height: auto;
-    object-fit: contain; /* Keeps whole image visible */
+    object-fit: contain; 
     display: block;
 }
 
 /* Main Content Container */
 main.content-container {
     width: 100%;
-    max-width: 600px; /* Constraints readability for mobile views */
+    max-width: 600px; 
     margin: 0 auto;
     padding: 32px 16px;
     display: flex;
@@ -59,58 +55,75 @@ main.content-container {
     align-items: center;
 }
 
-/* If you have the image from Image_10.png, this text title is redundant and messy */
+/* Hide plain text H1 since your banner text handles this */
 .thank-you-section h1 {
-    display: none; /* Explicitly hide the plain text title */
+    display: none; 
 }
 
-/* Target the plain-text Thank You paragraphs (Image_10.png lower text) */
 .thank-you-section p {
     font-size: 1rem;
-    text-align: left; /* Keep left-aligned for reading flow */
-    color: #333333; /* Dark Gray for comfortable reading */
+    text-align: left; 
+    color: #333333; 
     margin-bottom: 16px;
-    max-width: 90%; /* Center the text block slightly on mobile */
+    max-width: 90%; 
 }
 
-/* GALLERY GRID: Adaptive 2-Column Mobile Masonry */
+/* GALLERY TITLE */
 .gallery-section h2 {
     font-size: 1.5rem;
-    color: #143323; /* Deep Green */
+    color: #143323; 
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
+/* FIXED GALLERY GRID: Responsive Columns for Instant Layout Rendering */
 .gallery-grid {
-    column-count: 2; /* 2 columns on mobile */
-    column-gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+    gap: 12px;
     width: 100%;
 }
 
+/* Gallery Item with Pre-allocated Aspect Ratio Box */
 .gallery-item {
-    break-inside: avoid;
-    display: block;
-    margin-bottom: 12px;
-    border-radius: 4px;
-    overflow: hidden;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 2; /* Forces an immediate 3:2 bounding frame so images load instantly */
+    background-color: #E2E2D5; /* Subtle placeholder color while images load */
+    border-radius: 6px;
+    overflow: visible !important; /* Crucial for the scale expansion zoom */
+    z-index: 1;
+    transition: z-index 0.3s ease;
 }
 
 .gallery-item img {
     width: 100%;
-    height: auto;
-    object-fit: cover;
+    height: 100%;
+    object-fit: cover; /* Keeps images beautifully cropped without squishing */
     display: block;
+    border-radius: 6px;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+}
+
+/* HOVER INTERACTIONS */
+.gallery-item:hover {
+    z-index: 10; /* Brings the active hovered image to the front layer */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.35); /* Zooms beautifully out over the grid borders */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); 
+    cursor: pointer; 
 }
 
 /* DOWNLOAD SECTION */
 .download-section {
     margin-top: 40px;
-    background-color: #E6EFE6; /* Pale Green tint from the theme */
+    background-color: #E6EFE6; 
     padding: 24px 16px;
     border-radius: 8px;
-    border: 1px solid #DCA534; /* Gold border */
+    border: 1px solid #DCA534; 
 }
 
 .download-section p {
@@ -125,20 +138,20 @@ main.content-container {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    background-color: #A61C11; /* Deep Red accent */
+    background-color: #A61C11; 
     color: #ffffff;
     text-decoration: none;
     padding: 14px 28px;
     font-size: 1rem;
     font-weight: 600;
     border-radius: 30px;
-    width: 100%; /* Full width button on mobile for easy tapping */
+    width: 100%; 
     max-width: 300px;
     transition: background-color 0.2s ease;
 }
 
 .download-btn:hover, .download-btn:active {
-    background-color: #82140B; /* Darker red on hover */
+    background-color: #82140B; 
 }
 
 footer {
@@ -151,37 +164,14 @@ footer {
 /* RESPONSIVE BREAKPOINT FOR LARGER SCREENS (Desktops) */
 @media screen and (min-width: 1024px) {
     main.content-container {
-        max-width: 900px; /* Allow wider layout on desktop */
+        max-width: 1100px; /* Wider desktop canvas */
         padding: 40px;
     }
     .gallery-grid {
-        column-count: 3; /* Switch to 3 columns on desktop for better fit */
+        grid-template-columns: repeat(4, 1fr); /* 4 quick-loading columns on desktop layout */
+        gap: 16px;
     }
     .banner-container {
-        min-height: 400px; /* Give the banner more height on desktop */
+        min-height: 400px; 
     }
-}
-
-/* Gallery Hover Zoom Effect */
-.gallery-item {
-    overflow: visible !important; /* Allows the image to break out of its container boundaries */
-    position: relative;          /* Keeps it layered correctly */
-    z-index: 1;                  /* Default layer level */
-    transition: z-index 0.3s ease;
-}
-
-.gallery-item img {
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease; /* Ultra smooth glide */
-    border-radius: 6px;          /* Clean, slightly rounded edges */
-}
-
-/* When a user hovers over an image */
-.gallery-item:hover {
-    z-index: 10;                 /* Brings the hovered image to the absolute front layer so it doesn't hide behind others */
-}
-
-.gallery-item:hover img {
-    transform: scale(1.35);      /* Makes the image 35% bigger! Change to 1.5 if you want it even massive */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); /* Adds a gorgeous drop shadow to give it a 3D depth effect */
-    cursor: pointer;             /* Changes mouse pointer to a hand */
 }
