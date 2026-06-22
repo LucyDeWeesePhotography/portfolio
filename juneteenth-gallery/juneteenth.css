@@ -161,3 +161,27 @@ footer {
         min-height: 400px; /* Give the banner more height on desktop */
     }
 }
+
+/* Gallery Hover Zoom Effect */
+.gallery-item {
+    overflow: visible !important; /* Allows the image to break out of its container boundaries */
+    position: relative;          /* Keeps it layered correctly */
+    z-index: 1;                  /* Default layer level */
+    transition: z-index 0.3s ease;
+}
+
+.gallery-item img {
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease; /* Ultra smooth glide */
+    border-radius: 6px;          /* Clean, slightly rounded edges */
+}
+
+/* When a user hovers over an image */
+.gallery-item:hover {
+    z-index: 10;                 /* Brings the hovered image to the absolute front layer so it doesn't hide behind others */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.35);      /* Makes the image 35% bigger! Change to 1.5 if you want it even massive */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); /* Adds a gorgeous drop shadow to give it a 3D depth effect */
+    cursor: pointer;             /* Changes mouse pointer to a hand */
+}
