@@ -1,21 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Lato:wght@300;400;700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Lato', sans-serif;
-    background: #f5ebe0;
-    color: #2c3e35;
-} */
-
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&family=Satisfy&display=swap");
 
 /* ==========================================
@@ -206,15 +188,20 @@ body.site-frame {
     column-count: 4;
     column-gap: 20px;
 }
+     /* display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; */
+
 
 .gallery-grid img {
     width: 100%;
-    margin-bottom: 20px;
+    height: auto;
     display: block;
-    object-fit: contain; /* Ensures full image is visible */
+    margin-bottom: 20px;
+    break-inside: avoid;
     cursor: pointer;
     transition: .4s ease;
-    height: auto; /* Respects aspect ratio */
+    object-fit: contain;
 }
 
 .gallery-grid img:hover {
@@ -295,25 +282,28 @@ footer p {
 }
 
 /* ==========================
-   RESPONSIVE
+   RESPONSIVE GRID
 ========================== */
-@media(max-width: 1000px) {
-    .gallery-grid { column-count: 3; }
+
+@media (max-width: 1000px) {
+    .gallery-grid {
+        column-count: 3;
+    }
 }
 
-@media(max-width: 700px) {
-    .gallery-grid { column-count: 2; }
-    .family-hero-overlay h1 { font-size: 3.5rem; }
+@media (max-width: 700px) {
+    .gallery-grid {
+        column-count: 2; /* ⭐ THIS is your mobile fix */
+    }
 }
 
-@media(max-width: 500px) {
-    .gallery-grid { column-count: 1; }
-    .family-header { flex-direction: column; gap: 20px; }
-    .family-header ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
-    .family-hero { height: 60vh; }
-    .family-hero-overlay h1 { font-size: 2.5rem; }
-    .family-hero-overlay p { font-size: .8rem; }
+@media (max-width: 500px) {
+    .gallery-grid {
+        column-count: 2;
+        column-gap: 12px;
+    }
 }
+
 
 /* ==========================
    MOBILE & TABLET HERO ADJUSTMENTS
