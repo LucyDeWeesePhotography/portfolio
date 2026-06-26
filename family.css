@@ -1,0 +1,356 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Lato:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background: #f5ebe0;
+    color: #2c3e35;
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&family=Satisfy&display=swap");
+
+/* ==========================================
+   RESET & SYSTEM BASICS
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.site-frame {
+    background-color: #f5ebe0; 
+    padding: 3% 4%;
+    font-family: "Lato", sans-serif;
+    color: #333333;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.page-canvas {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 
+        0 0 0 25px #AABA99, 
+        0 30px 70px rgba(0, 0, 0, 0.22); 
+}
+
+.editorial-block {
+    padding: 90px 6%;
+}
+
+/* ==========================================
+   INTERCALATING BACKGROUNDS
+   ========================================== */
+.editorial-block.background-caramel {
+    background-color: #f5ebe0 !important;
+}
+
+.editorial-block.background-turquoise {
+    background-color: #cbded2 !important;
+}
+
+/* ==========================================
+   BRANDING, HEADER & DESKTOP NAVIGATION
+   ========================================== */
+.site-header {
+    width: 100%;
+    position: relative;
+    z-index: 100;
+}
+
+.logo-bar {
+    background: #064435;
+    text-align: center;
+    padding: 30px 20px 15px 20px;
+    position: relative;
+}
+
+.logo-bar img {
+    height: 100px;
+    object-fit: contain;
+}
+
+
+/* ==========================
+   HEADER
+========================== */
+.family-header {
+    background: #064435;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container img {
+    height: 90px;
+}
+
+.family-header ul {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+.family-header a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: .85rem;
+    transition: opacity 0.3s;
+}
+
+.family-header a:hover {
+    opacity: 0.7;
+}
+
+/* ==========================
+   HERO: Clean Banner & Glass Effect
+========================== */
+.family-hero {
+    position: relative;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.hero-image {
+    position: relative; /* Change from absolute to relative */
+    width: 100%;
+    height: auto;       /* This is the key: it scales to the image's height */
+    display: block;     /* Removes mysterious bottom spacing */
+    object-fit: contain;
+    background-color: #f5ebe0;
+    z-index: 1;
+}
+
+.family-hero-overlay {
+    position: absolute; /* Keeps it on top of the image */
+    top: 20px;
+    left: 20px;
+    z-index: 3;
+    color: #064435; /* Dark green for better readability */
+    
+    /* The Glass Effect */
+    background: rgba(255, 255, 255, 0.4); 
+    backdrop-filter: blur(8px); /* This blurs the image behind the text */
+    -webkit-backdrop-filter: blur(8px); /* For Safari support */
+    padding:20px 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+}
+
+.family-hero-overlay h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.family-hero-overlay p {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+
+/* ==========================
+   INTRO
+========================== */
+.family-intro {
+    padding: 90px 8%;
+    text-align: center;
+}
+
+.family-intro h2 {
+    font-family: 'Cormorant Garamond', serif;
+    color: #064435;
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.family-intro p {
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.9;
+}
+
+/* ==========================
+   GALLERY (Updated for Masonry Layout)
+========================== */
+.family-gallery {
+    padding: 0 5% 100px;
+}
+
+.gallery-grid {
+    column-count: 4;
+    column-gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    margin-bottom: 20px;
+    display: block;
+    object-fit: contain; /* Ensures full image is visible */
+    cursor: pointer;
+    transition: .4s ease;
+    height: auto; /* Respects aspect ratio */
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+}
+
+/* ==========================
+   LIGHTBOX
+========================== */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .95);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+/* ==========================
+   SPACING FIX: Banner/Gallery Gap
+========================== */
+.family-gallery {
+    padding-top: 60px; /* Adjust this value for more or less space */
+    padding-bottom: 100px;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+footer {
+    background: #064435;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer p {
+    color: white;
+}
+
+/* ==========================
+   Back to Top Button
+========================== */
+.back-to-top {
+    display: block;
+    text-align: center;
+    padding: 20px 0 60px 0; /* Extra room at the bottom of the page */
+    color: #064435;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.back-to-top:hover {
+    color: #AABA99; /* Subtle color change on hover */
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media(max-width: 1000px) {
+    .gallery-grid { column-count: 3; }
+}
+
+@media(max-width: 700px) {
+    .gallery-grid { column-count: 2; }
+    .family-hero-overlay h1 { font-size: 3.5rem; }
+}
+
+@media(max-width: 500px) {
+    .gallery-grid { column-count: 1; }
+    .family-header { flex-direction: column; gap: 20px; }
+    .family-header ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
+    .family-hero { height: 60vh; }
+    .family-hero-overlay h1 { font-size: 2.5rem; }
+    .family-hero-overlay p { font-size: .8rem; }
+}
+
+/* ==========================
+   MOBILE & TABLET HERO ADJUSTMENTS
+========================== */
+
+/* Tablet: Set a comfortable fixed height */
+@media(max-width: 900px) {
+    .family-hero {
+        height: 35vh; 
+    }
+}
+
+/* Mobile: Force the container to wrap the image perfectly */
+@media(max-width: 600px) {
+    .family-hero {
+        height: auto;       /* Removes the gap: height is now determined by the image */
+        min-height: 200px;  /* Ensures it doesn't get too small */
+        padding: 15px 0;    /* Adds a little breathing room around the image */
+    }
+    
+    .hero-image {
+        position: relative; /* Allows the image to push the container height */
+        display: block;
+        height: auto;       /* Respects the original image aspect ratio */
+    }
+
+    .family-hero-overlay {
+        position: absolute; /* Keeps text layered over the image */
+        padding: 15px 20px;
+    }
+    
+    .family-hero-overlay h1 {
+        font-size: 1.8rem; 
+    }
+    
+    .family-hero-overlay p {
+        font-size: 0.6rem;
+        letter-spacing: 1px;
+    }
+}
