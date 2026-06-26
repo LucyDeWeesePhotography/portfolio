@@ -65,6 +65,63 @@ body.site-frame {
     object-fit: contain;
 }
 
+/* Hidden on desktop screen sizes by default */
+.menu-toggle-btn, .menu-close-btn {
+    display: none;
+}
+
+.navbar {
+    background: #064435;
+    text-align: center;
+    padding: 15px 10px 30px 10px;
+}
+
+.navbar ul {
+    list-style: none;
+}
+
+.navbar li {
+    display: inline-block;
+    margin: 0 25px;
+}
+
+.navbar a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    position: relative; /* Required for the absolute underline */
+    padding-bottom: 5px; /* Gives the underline some breathing room */
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ffd700;
+}
+
+/* Create the underline using a pseudo-element */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0); /* Starts at zero width */
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffd700;
+    box-shadow: 0 0 8px #5f5103; /* Makes the underline glow too! */
+    transform-origin: bottom center;
+    transition: transform 0.3s ease-out;
+}
+
+/* Expand the underline on hover */
+.navbar a:hover::after {
+    transform: scaleX(1);
+}
+
+
 
 /* ==========================
    HEADER
@@ -177,6 +234,29 @@ body.site-frame {
     line-height: 1.9;
 }
 
+
+.family-title-block {
+    text-align: center;
+    padding: 80px 20px 30px;
+    background: #f5ebe0;
+}
+
+.family-title-block h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.5rem;
+    font-weight: 500;
+    color: #064435;
+    letter-spacing: 1px;
+}
+
+.family-title-block p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #555;
+    margin-top: 10px;
+}
 /* ==========================
    GALLERY (Updated for Masonry Layout)
 ========================== */
@@ -188,11 +268,7 @@ body.site-frame {
     column-count: 4;
     column-gap: 20px;
 }
-     /* display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px; */
-
-
+    
 .gallery-grid img {
     width: 100%;
     height: auto;
@@ -261,24 +337,81 @@ footer p {
     color: white;
 }
 
+/* ==========================================
+  SOCIAL MEDIA ICONS
+   ========================================== */
+.social-icons {
+    margin-bottom: 15px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 12px;
+}
+
+.social-icons img {
+    width: 38;
+    height: 38px;
+    object-fit: contain;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.85;
+}
+
+.social-icons img:hover {
+    transform: scale(1.15);
+    opacity: 1;
+}
+
 /* ==========================
    Back to Top Button
 ========================== */
 .back-to-top {
     display: block;
+    width: fit-content;
+    margin: 0 auto;
     text-align: center;
-    padding: 20px 0 60px 0; /* Extra room at the bottom of the page */
-    color: #064435;
+    
+    /* Create a clean capsule background shape */
+    background-color: transparent;
+    padding: 12px 30px;     /* Comfortable spacing inside the button */
+    border-radius: 30px;    /* Rounded pill edges */
+    margin-bottom: 55px;    /* Spacing at the bottom of the page */
+    
+    color: #064435;         /* Elegant dark green text by default */
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
-    transition: color 0.3s ease;
+    position: relative;
+    transition: all 0.3s ease; /* Smooth transition for background, color, and shadow */
 }
 
+/* Hover State: Dark green background makes the gold perfectly readable */
 .back-to-top:hover {
-    color: #AABA99; /* Subtle color change on hover */
+    color: #ffd700; 
+    background-color: #064435; /* Same dark green as your header/footer */
+    box-shadow: 0 4px 15px rgba(6, 68, 53, 0.3); /* Soft depth shadow */
+}
+
+/* Create the gold underline inside the button */
+.back-to-top::after {
+    content: '';
+    position: absolute;
+    width: calc(100% - 60px); /* Adjusts line width to match the text inside the padding */
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 8px;              /* Pulls line slightly up from the bottom curve */
+    left: 30px;               /* Aligns perfectly with the text start */
+    background-color: #ffd700;
+    box-shadow: 0 0 8px #5f5103;
+    transform-origin: bottom center;
+    transition: transform 0.3s ease-out;
+}
+
+/* Expand the gold underline on hover */
+.back-to-top:hover::after {
+    transform: scaleX(1);
 }
 
 /* ==========================

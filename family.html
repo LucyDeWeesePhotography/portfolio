@@ -11,28 +11,36 @@
 <body class="site-frame">
 
     <div class="page-canvas">
-        <header class="family-header">
-            <div class="logo-container">
-                <a href="index.html">
-                    <img src="./images/logo_lense.png" alt="Lucy DeWeese Photography">
-                </a>
+
+        <header class="site-header">
+            <div class="logo-bar">
+                <img src="./images/logo3.png" alt="Lucy DeWeese Photography Logo">
+                
+                <button class="menu-toggle-btn" id="openMenuBtn" aria-label="Open Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+
+            <nav class="navbar" id="mobileNavbar">
+    <button class="menu-close-btn" id="closeMenuBtn" aria-label="Close Navigation Menu">&times;</button>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        
+    </ul>
+</nav>
         </header>
 
-        <section class="family-hero">
-            <img src="./images/f11.jpg" alt="Family Photography Banner" class="hero-image">
-            <div class="family-hero-overlay">
-                <h1>Family Gallery</h1>
-                
-            </div>
-        </section>
+        <section class="family-title-block">
+    <h1>Family Gallery</h1>
+    <p>Capturing connection, love, and timeless moments</p>
+</section>
+
+<section class="family-hero">
+    <img src="./images/f11.jpg" alt="Family Photography Banner" class="hero-image">
+</section>
 
         
 <section id="gallery" class="family-gallery">
@@ -83,7 +91,23 @@
 <a href="#" class="back-to-top">Back to Top</a>
 
 <footer>
-<p>© 2026 Lucy DeWeese Photography</p>
+    <div class="footer-content">
+
+        <div class="social-icons">
+
+            <a href="https://www.facebook.com/YOURFACEBOOKPAGE" target="_blank" aria-label="Facebook">
+                <img src="./images/fb.png" alt="Facebook icon">
+            </a>
+
+            <a href="https://www.instagram.com/YOURINSTAGRAM" target="_blank" aria-label="Instagram">
+                <img src="./images/instagram.png" alt="Instagram icon">
+            </a>
+
+        </div>
+
+        <p>© 2026 Lucy DeWeese Photography</p>
+
+    </div>
 </footer>
 
 <div id="lightbox" class="lightbox">
