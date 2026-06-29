@@ -56,14 +56,16 @@ body.site-frame {
 .logo-bar {
     background: #064435;
     text-align: center;
-    padding: 30px 20px 15px 20px;
-    position: relative;
+    padding: 40px 20px 25px;
+    
 }
 
 .logo-bar img {
-    height: 100px;
-    object-fit: contain;
-}
+     height: 160px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.35));}
 
 /* Hidden on desktop screen sizes by default */
 .menu-toggle-btn, .menu-close-btn {
@@ -352,6 +354,30 @@ p {
 
 .service-card:hover .card-image-wrapper img {
     transform: scale(1.03);
+}
+
+
+.gallery-hint {
+    display: block;
+    text-align: center;
+
+    color: #064435;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    margin-top: 10px;
+    margin-bottom: 30px;  /* 👈 add this */
+
+    font-family: "Lato", sans-serif;
+    opacity: 0.8;
+}
+
+/* hide on desktop */
+@media (min-width: 901px) {
+    .mobile-hint {
+        display: none;
+    }
 }
 
 /* ==========================================

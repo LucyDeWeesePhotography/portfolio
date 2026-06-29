@@ -56,14 +56,16 @@ body.site-frame {
 .logo-bar {
     background: #064435;
     text-align: center;
-    padding: 30px 20px 15px 20px;
-    position: relative;
+    padding: 40px 20px 25px;
+    
 }
 
 .logo-bar img {
-    height: 100px;
-    object-fit: contain;
-}
+     height: 160px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.35));}
 
 /* Hidden on desktop screen sizes by default */
 .menu-toggle-btn, .menu-close-btn {
@@ -414,6 +416,8 @@ footer p {
     transform: scaleX(1);
 }
 
+
+
 /* ==========================
    RESPONSIVE GRID
 ========================== */
@@ -475,5 +479,38 @@ footer p {
     .family-hero-overlay p {
         font-size: 0.6rem;
         letter-spacing: 1px;
+    }
+}
+@media (max-width: 600px) {
+    .logo-bar img {
+        height: 90px;  /* keeps it balanced on small screens */
+    }
+}
+
+/* ==========================
+   MOBILE TYPOGRAPHY POLISH
+========================== */
+@media (max-width: 600px) {
+
+    .family-title-block {
+        padding: 50px 15px 25px;
+    }
+
+    .family-title-block h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2.2rem;   /* much smaller for mobile */
+        font-weight: 500;
+        line-height: 1.2;
+        letter-spacing: 0.5px;
+        color: #064435;
+    }
+
+    .family-title-block p {
+        font-family: "Lato", sans-serif;  /* keep Lato */
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;  /* softer than desktop */
+        text-transform: uppercase;
+        color: #555;
+        margin-top: 8px;
     }
 }
