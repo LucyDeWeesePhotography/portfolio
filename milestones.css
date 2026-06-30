@@ -1,0 +1,555 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&family=Satisfy&display=swap");
+
+/* ==========================================
+   RESET & SYSTEM BASICS
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.site-frame {
+    background-color: #f5ebe0; 
+    padding: 3% 4%;
+    font-family: "Lato", sans-serif;
+    color: #333333;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.page-canvas {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 
+        0 0 0 25px #AABA99, 
+        0 30px 70px rgba(0, 0, 0, 0.22); 
+}
+
+.editorial-block {
+    padding: 90px 6%;
+}
+
+/* ==========================================
+   INTERCALATING BACKGROUNDS
+   ========================================== */
+.editorial-block.background-caramel {
+    background-color: #f5ebe0 !important;
+}
+
+.editorial-block.background-turquoise {
+    background-color: #cbded2 !important;
+}
+
+/* ==========================================
+   BRANDING, HEADER & DESKTOP NAVIGATION
+   ========================================== */
+.site-header {
+    width: 100%;
+    position: relative;
+    z-index: 100;
+}
+
+.logo-bar {
+    background: #064435;
+    text-align: center;
+    padding: 40px 20px 25px;
+    
+}
+
+.logo-bar img {
+     height: 160px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.35));}
+
+/* Hidden on desktop screen sizes by default */
+.menu-toggle-btn, .menu-close-btn {
+    display: none;
+}
+
+.navbar {
+    background: #064435;
+    text-align: center;
+    padding: 15px 10px 30px 10px;
+}
+
+.navbar ul {
+    list-style: none;
+}
+
+.navbar li {
+    display: inline-block;
+    margin: 0 25px;
+}
+
+.navbar a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    position: relative; /* Required for the absolute underline */
+    padding-bottom: 5px; /* Gives the underline some breathing room */
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ffd700;
+}
+
+/* Create the underline using a pseudo-element */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0); /* Starts at zero width */
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffd700;
+    box-shadow: 0 0 8px #5f5103; /* Makes the underline glow too! */
+    transform-origin: bottom center;
+    transition: transform 0.3s ease-out;
+}
+
+/* Expand the underline on hover */
+.navbar a:hover::after {
+    transform: scaleX(1);
+}
+
+
+
+/* ==========================
+   HEADER
+========================== */
+.family-header {
+    background: #064435;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container img {
+    height: 90px;
+}
+
+.family-header ul {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+.family-header a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: .85rem;
+    transition: opacity 0.3s;
+}
+
+.family-header a:hover {
+    opacity: 0.7;
+}
+
+/* ==========================
+   HERO: Clean Banner & Glass Effect
+========================== */
+.family-hero {
+    position: relative;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.hero-image {
+    position: relative; /* Change from absolute to relative */
+    width: 100%;
+    height: auto;       /* This is the key: it scales to the image's height */
+    display: block;     /* Removes mysterious bottom spacing */
+    object-fit: contain;
+    background-color: #f5ebe0;
+    z-index: 1;
+}
+
+.family-hero-overlay {
+    position: absolute; /* Keeps it on top of the image */
+    top: 20px;
+    left: 20px;
+    z-index: 3;
+    color: #064435; /* Dark green for better readability */
+    
+    /* The Glass Effect */
+    background: rgba(255, 255, 255, 0.4); 
+    backdrop-filter: blur(8px); /* This blurs the image behind the text */
+    -webkit-backdrop-filter: blur(8px); /* For Safari support */
+    padding:20px 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+}
+
+.family-hero-overlay h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.family-hero-overlay p {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+
+/* ==========================
+   INTRO
+========================== */
+.family-intro {
+    padding: 90px 8%;
+    text-align: center;
+}
+
+.family-intro h2 {
+    font-family: 'Cormorant Garamond', serif;
+    color: #064435;
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.family-intro p {
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.9;
+}
+
+
+.family-title-block {
+    text-align: center;
+    padding: 80px 20px 30px;
+    background: #f5ebe0;
+}
+
+.family-title-block h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.5rem;
+    font-weight: 500;
+    color: #064435;
+    letter-spacing: 1px;
+}
+
+.family-title-block p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #555;
+    margin-top: 10px;
+}
+/* ==========================
+   GALLERY (Updated for Masonry Layout)
+========================== */
+.family-gallery {
+    padding: 0 5% 100px;
+}
+
+.gallery-grid {
+    column-count: 4;
+    column-gap: 20px;
+}
+    
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+    break-inside: avoid;
+    cursor: pointer;
+    transition: .4s ease;
+    object-fit: contain;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+}
+
+/* ==========================
+   LIGHTBOX
+========================== */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .95);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+/* ==========================
+   SPACING FIX: Banner/Gallery Gap
+========================== */
+.family-gallery {
+    padding-top: 60px; /* Adjust this value for more or less space */
+    padding-bottom: 100px;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+footer {
+    background: #064435;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer p {
+    color: white;
+}
+
+/* ==========================================
+  SOCIAL MEDIA ICONS
+   ========================================== */
+.social-icons {
+    margin-bottom: 15px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 12px;
+}
+
+.social-icons img {
+    width: 38;
+    height: 38px;
+    object-fit: contain;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.85;
+}
+
+.social-icons img:hover {
+    transform: scale(1.15);
+    opacity: 1;
+}
+
+/* ==========================
+   Back to Top Button
+========================== */
+.back-to-top {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+    
+    /* Create a clean capsule background shape */
+    background-color: transparent;
+    padding: 12px 30px;     /* Comfortable spacing inside the button */
+    border-radius: 30px;    /* Rounded pill edges */
+    margin-bottom: 55px;    /* Spacing at the bottom of the page */
+    
+    color: #064435;         /* Elegant dark green text by default */
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    transition: all 0.3s ease; /* Smooth transition for background, color, and shadow */
+}
+
+/* Hover State: Dark green background makes the gold perfectly readable */
+.back-to-top:hover {
+    color: #ffd700; 
+    background-color: #064435; /* Same dark green as your header/footer */
+    box-shadow: 0 4px 15px rgba(6, 68, 53, 0.3); /* Soft depth shadow */
+}
+
+/* Create the gold underline inside the button */
+.back-to-top::after {
+    content: '';
+    position: absolute;
+    width: calc(100% - 60px); /* Adjusts line width to match the text inside the padding */
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 8px;              /* Pulls line slightly up from the bottom curve */
+    left: 30px;               /* Aligns perfectly with the text start */
+    background-color: #ffd700;
+    box-shadow: 0 0 8px #5f5103;
+    transform-origin: bottom center;
+    transition: transform 0.3s ease-out;
+}
+
+/* Expand the gold underline on hover */
+.back-to-top:hover::after {
+    transform: scaleX(1);
+}
+
+
+
+/* ==========================
+   RESPONSIVE GRID
+========================== */
+
+@media (max-width: 1000px) {
+    .gallery-grid {
+        column-count: 3;
+    }
+}
+
+@media (max-width: 700px) {
+    .gallery-grid {
+        column-count: 2; /* ⭐ THIS is your mobile fix */
+    }
+}
+
+@media (max-width: 500px) {
+    .gallery-grid {
+        column-count: 2;
+        column-gap: 12px;
+    }
+}
+
+
+/* ==========================
+   MOBILE & TABLET HERO ADJUSTMENTS
+========================== */
+
+/* Tablet: Set a comfortable fixed height */
+@media(max-width: 900px) {
+    .family-hero {
+        height: 35vh; 
+    }
+}
+
+/* Mobile: Force the container to wrap the image perfectly */
+@media(max-width: 600px) {
+    .family-hero {
+        height: auto;       /* Removes the gap: height is now determined by the image */
+        min-height: 200px;  /* Ensures it doesn't get too small */
+        padding: 15px 0;    /* Adds a little breathing room around the image */
+    }
+    
+    .hero-image {
+        position: relative; /* Allows the image to push the container height */
+        display: block;
+        height: auto;       /* Respects the original image aspect ratio */
+    }
+
+    .family-hero-overlay {
+        position: absolute; /* Keeps text layered over the image */
+        padding: 15px 20px;
+    }
+    
+    .family-hero-overlay h1 {
+        font-size: 1.8rem; 
+    }
+    
+    .family-hero-overlay p {
+        font-size: 0.6rem;
+        letter-spacing: 1px;
+    }
+}
+@media (max-width: 600px) {
+    .logo-bar img {
+        height: 90px;  /* keeps it balanced on small screens */
+    }
+}
+
+/* ==========================
+   MOBILE TYPOGRAPHY POLISH
+========================== */
+@media (max-width: 600px) {
+
+    .family-title-block {
+        padding: 50px 15px 25px;
+    }
+
+    .family-title-block h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2.2rem;   /* much smaller for mobile */
+        font-weight: 500;
+        line-height: 1.2;
+        letter-spacing: 0.5px;
+        color: #064435;
+    }
+
+    .family-title-block p {
+        font-family: "Lato", sans-serif;  /* keep Lato */
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;  /* softer than desktop */
+        text-transform: uppercase;
+        color: #555;
+        margin-top: 8px;
+    }
+}
+
+/* ==========================
+   GALLERY SECTIONS
+========================== */
+
+.gallery-section {
+    margin-bottom: 90px;
+}
+
+.gallery-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.8rem;
+    font-weight: 500;
+    color: #064435;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.gallery-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 2px;
+    background: #b89b5e;
+    margin: 15px auto 0;
+}
+
+@media (max-width:600px){
+
+    .gallery-section{
+        margin-bottom:60px;
+    }
+
+    .gallery-title{
+        font-size:2rem;
+        margin-bottom:25px;
+    }
+}
