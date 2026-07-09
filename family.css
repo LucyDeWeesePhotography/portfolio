@@ -59,13 +59,35 @@ body.site-frame {
     padding: 40px 20px 25px;
     
 }
+brand-header {
+    display: flex;
+    flex-direction: column;
+}
 
-.logo-bar img {
+.brand-script {
+    font-family: "Beauty", cursive;
+    font-size: 3.8rem;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+.brand-photography {
+    font-family: "Lato", sans-serif;
+    font-size: .7rem;
+    color: rgba(255,255,255,.95);
+    letter-spacing: 6px;
+    margin-top: -8px;
+    padding-left: 85px;
+}
+
+/* .logo-bar img {
      height: 160px;
     width: auto;
     display: block;
     margin: 0 auto;
-    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.35));}
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.35));} */
 
 /* Hidden on desktop screen sizes by default */
 .menu-toggle-btn, .menu-close-btn {

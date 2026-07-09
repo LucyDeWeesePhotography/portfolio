@@ -60,12 +60,94 @@ body.site-frame {
     
 }
 
-.logo-bar img {
+/* Main Brand Name */
+.brand-script {
+    font-family: 'Beauty', cursive;
+    font-size: 5rem;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+/* This styles each individual letter injected by the JS script */
+.brand-script span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: writeLetter 0.4s ease forwards;
+}
+
+/* Custom spacing for spaces between words so they don't vanish */
+.brand-script span.space {
+    width: 0.25em; 
+}
+
+/* Typing reveal keyframe */
+@keyframes writeLetter {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Photography Subtitle */
+.brand-photography {
+    font-family: 'Lato', sans-serif;
+    font-size: .8rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.95);
+    letter-spacing: 7px;
+    margin-top: -12px;
+    padding-left: 20px;
+
+    opacity: 0;
+    animation: revealPhotography 2s ease forwards;
+    animation-delay: 2s;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Name reveal */
+@keyframes revealName {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+        letter-spacing: 8px;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: 1px;
+    }
+}
+
+
+/* Photography reveal */
+@keyframes revealPhotography {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* .logo-bar img {
      height: 160px;
     width: auto;
     display: block;
     margin: 0 auto;
-    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.35));}
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.35));} */
 
 /* Hidden on desktop screen sizes by default */
 .menu-toggle-btn, .menu-close-btn {
@@ -1179,4 +1261,21 @@ footer p {
 .overlay-back p {
     font-size: 0.85rem;
 }
+}
+
+@media (max-width:600px){
+
+    .logo-bar {
+        padding:30px 15px 25px;
+    }
+
+    .brand-script {
+        font-size:3rem;
+    }
+
+    .brand-photography {
+        font-size:.55rem;
+        letter-spacing:4px;
+    }
+
 }
