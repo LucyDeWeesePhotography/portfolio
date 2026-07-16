@@ -1,0 +1,579 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&family=Satisfy&display=swap");
+
+
+/* ==========================================
+   RESET & SYSTEM BASICS
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body.site-frame {
+    background-color: #f5ebe0;
+    padding: 3% 4%;
+    font-family: "Lato", sans-serif;
+    color: #333333;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+
+.page-canvas {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow: hidden;
+
+    box-shadow:
+        0 0 0 25px #AABA99,
+        0 30px 70px rgba(0,0,0,0.22);
+}
+
+
+
+/* ==========================================
+   EDITORIAL SECTIONS
+========================================== */
+
+.editorial-block {
+    padding: 90px 6%;
+}
+
+
+.background-turquoise {
+    background-color: #cbded2;
+}
+
+
+
+/* ==========================================
+   HEADER & BRAND
+========================================== */
+
+
+.site-header {
+    width: 100%;
+    position: relative;
+    z-index: 100;
+}
+
+
+.logo-bar {
+
+    background: #064435;
+    text-align: center;
+    padding: 40px 20px 25px;
+
+}
+
+
+.brand-header {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.brand-script {
+
+    font-family: "Beauty", cursive;
+    font-size: 3.8rem;
+    font-weight: 400;
+    color: white;
+    line-height: 1;
+    letter-spacing: 1px;
+
+}
+
+
+.brand-photography {
+
+    font-family: "Lato", sans-serif;
+    font-size: .7rem;
+    color: rgba(255,255,255,.95);
+    letter-spacing: 6px;
+    margin-top: -8px;
+    padding-left: 85px;
+
+}
+
+
+
+/* ==========================================
+   MOBILE MENU BUTTONS
+========================================== */
+
+.menu-toggle-btn,
+.menu-close-btn {
+
+    display: none;
+
+}
+
+
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+
+.navbar {
+
+    background: #064435;
+    text-align: center;
+    padding: 15px 10px 30px;
+
+}
+
+
+.navbar ul {
+
+    list-style: none;
+
+}
+
+
+.navbar li {
+
+    display: inline-block;
+    margin: 0 25px;
+
+}
+
+
+.navbar a {
+
+    color: rgba(255,255,255,.9);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: .85rem;
+    letter-spacing: 2px;
+
+    position: relative;
+    padding-bottom: 5px;
+
+    transition: color .3s ease;
+
+}
+
+
+.navbar a:hover {
+
+    color: #ffd700;
+
+}
+
+
+.navbar a::after {
+
+    content: '';
+
+    position: absolute;
+
+    width:100%;
+    height:2px;
+
+    bottom:0;
+    left:0;
+
+    background:#ffd700;
+
+    transform:scaleX(0);
+
+    transition:.3s ease;
+
+}
+
+
+.navbar a:hover::after {
+
+    transform:scaleX(1);
+
+}
+
+
+
+/* ==========================================
+   CONTACT TITLE
+========================================== */
+
+
+.family-title-block {
+
+    text-align:center;
+
+    padding:80px 20px 40px;
+
+    background:#f5ebe0;
+
+}
+
+
+.family-title-block h1 {
+
+    font-family:"Cormorant Garamond", serif;
+
+    font-size:4.5rem;
+
+    font-weight:500;
+
+    color:#064435;
+
+}
+
+
+.family-title-block p {
+
+    font-family:"Lato", sans-serif;
+
+    font-size:1rem;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    color:#555;
+
+    margin-top:10px;
+
+}
+
+
+
+/* ==========================================
+   CONTACT CONTENT
+========================================== */
+
+
+.services-header {
+
+    text-align:center;
+
+}
+
+
+.section-subtitle {
+
+    font-family:"Lato", sans-serif;
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    font-size:.8rem;
+
+    color:#064435;
+
+}
+
+
+.services-header h2 {
+
+    font-family:"Cormorant Garamond", serif;
+
+    font-size:3rem;
+
+    font-weight:500;
+
+    color:#064435;
+
+    margin:15px 0 25px;
+
+}
+
+
+.services-header p {
+
+    line-height:1.8;
+
+}
+
+
+
+/* ==========================================
+   CONTACT CARDS
+========================================== */
+
+
+.contact-container {
+
+    max-width:1000px;
+
+    margin:40px auto 0;
+
+}
+
+
+.contact-card {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+
+
+.contact-item {
+/* 
+    background:rgba(255,255,255,.45); */
+    background:#ffffff;
+
+
+    text-align:center;
+
+    padding:45px 25px;
+
+    transition:.3s ease;
+
+}
+
+
+
+.contact-item:hover {
+
+    transform:translateY(-6px);
+
+}
+
+
+
+.contact-icon {
+
+    font-size:2.5rem;
+
+    color:#064435;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.contact-item h3 {
+
+    font-family:"Cormorant Garamond", serif;
+
+    font-size:2rem;
+
+    font-weight:500;
+
+    color:#064435;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.contact-item p {
+
+    font-family: "Lato", sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #064435;
+    font-weight: 400;
+
+}
+
+
+
+.contact-item a {
+
+    color:#064435;
+
+    text-decoration:none;
+ font-size: 1.25rem;
+    color: #064435;
+    text-decoration: none;
+}
+
+
+.contact-item a:hover {
+
+    color:#ffd700;
+
+}
+
+/* ==========================================
+   CONTACT SOCIAL ICONS
+========================================== */
+
+.contact-social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+
+.contact-social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.contact-social-icons img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    transition: transform .3s ease, opacity .3s ease;
+}
+
+
+.contact-social-icons img:hover {
+    transform: scale(1.15);
+    opacity: .75;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+
+footer {
+
+    background:#064435;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+}
+
+
+footer p {
+
+    color:white;
+
+}
+
+
+.social-icons {
+
+    margin-bottom:15px;
+
+}
+
+
+.social-icons a {
+
+    display:inline-block;
+
+    margin:0 12px;
+
+}
+
+
+.social-icons img {
+
+    width:38px;
+
+    height:38px;
+
+    object-fit:contain;
+
+    opacity:.85;
+
+    transition:.3s ease;
+
+}
+
+
+.social-icons img:hover {
+
+    transform:scale(1.15);
+
+    opacity:1;
+
+}
+
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+
+@media(max-width:700px){
+
+
+    body.site-frame {
+
+        padding:0;
+
+    }
+
+
+    .page-canvas {
+
+        box-shadow:none;
+
+    }
+
+
+    .brand-script {
+
+        font-size:3rem;
+
+    }
+
+
+    .brand-photography {
+
+        font-size:.55rem;
+
+        letter-spacing:4px;
+
+        padding-left:0;
+
+    }
+
+
+    .family-title-block {
+
+        padding:50px 15px 25px;
+
+    }
+
+
+    .family-title-block h1 {
+
+        font-size:2.4rem;
+
+    }
+
+
+    .family-title-block p {
+
+        font-size:.75rem;
+
+        letter-spacing:1.5px;
+
+    }
+
+
+    .services-header h2 {
+
+        font-size:2.2rem;
+
+    }
+
+
+    .contact-card {
+
+        grid-template-columns:1fr;
+
+        gap:25px;
+
+    }
+
+
+}
