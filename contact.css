@@ -433,6 +433,62 @@ body.site-frame {
     opacity: .75;
 }
 
+
+
+/* ==========================================
+   HERO BANNER
+========================================== */
+
+.family-hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.family-hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+    color: #ffffff;
+
+    background: rgba(6, 68, 53, 0.45);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    padding: 30px 50px;
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,.25);
+    box-shadow: 0 10px 30px rgba(0,0,0,.20);
+
+    max-width: 90%;
+}
+
+.family-hero-overlay h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.family-hero-overlay p {
+    font-family: "Lato", sans-serif;
+    font-size: .9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,.95);
+}
+
 /* ==========================================
    FOOTER
 ========================================== */
@@ -566,7 +622,20 @@ footer p {
 
     }
 
+    .family-hero-overlay {
+        padding: 18px 25px;
+        width: 85%;
+    }
 
+    .family-hero-overlay h1 {
+        font-size: 2rem;
+    }
+
+    .family-hero-overlay p {
+        font-size: .7rem;
+        letter-spacing: 2px;
+    }
+    
     .contact-card {
 
         grid-template-columns:1fr;
