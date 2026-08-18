@@ -939,7 +939,56 @@ footer p {
     }
 }
 
+/* explore collection */
+.gallery-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 
+    margin: 32px auto 48px;
+
+    color: #7a6552;
+}
+
+.cta-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+.cta-arrow {
+    margin-top: 10px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+
+    animation: exploreArrow 2s ease-in-out infinite;
+}
+
+@keyframes exploreArrow {
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.55;
+    }
+
+    50% {
+        transform: translateY(8px);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .cta-text {
+        font-size: 1.65rem;
+    }
+
+    .cta-arrow {
+        font-size: 1.25rem;
+    }
+}
 
 
 @media (max-width: 900px) {
