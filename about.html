@@ -1,155 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>About Me | Lucy DeWeese Photography</title>
-    
-    <!-- LINK ONLY TO YOUR INDEPENDENT ABOUT CSS -->
+
+    <!-- About Page Styles -->
     <link rel="stylesheet" href="about.css">
-    
-    <!-- Icon and Font libraries -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&family=Satisfy&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&family=Satisfy&display=swap"
+        rel="stylesheet">
+
 </head>
+
 <body class="site-frame">
 
     <div class="page-canvas">
 
-        <!-- BRAND HEADER -->
+
+        <!-- ==========================================
+             HEADER
+        =========================================== -->
+
         <header class="site-header">
+
             <div class="logo-bar minimal-header">
-                <!-- <img src="./images/logo3.png" alt="Lucy DeWeese Photography Logo"> -->
+
+                <!-- Brand -->
                 <div class="brand-header">
-            <div class="brand-script">Lucy DeWeese</div>
-            <div class="brand-photography">PHOTOGRAPHY</div>
-        </div>
-                <!-- Back to Home Navigation -->
-                <nav class="back-home-nav">
-                    <a href="index.html" class="nav-back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+
+                    <div class="brand-script">
+                        Lucy DeWeese
+                    </div>
+
+                    <div class="brand-photography">
+                        PHOTOGRAPHY
+                    </div>
+
+                </div>
+
+
+                <!-- Back to Home -->
+                <nav class="back-home-nav" aria-label="Main navigation">
+
+                    <a href="index.html" class="nav-back-link">
+
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+
+                        Back to Home
+
+                    </a>
+
                 </nav>
+
             </div>
+
         </header>
 
-        <!-- EDITORIAL MAGAZINE SPLIT SECTION -->
-        <section class="editorial-magazine-block">
-            
-            <!-- Left Side: Asymmetrical 3-Media Stack -->
-            <div class="magazine-left-stack">
-                <div class="stack-img-wrapper">
-                    <img src="./images/lucy-Deweese2026jpg.jpg" alt="Lucy DeWeese Profile">
-                </div>
-                
-              
-                
-                <div class="stack-img-wrapper">
-                    <img src="./images/lu-cy.jpg" alt="Moments in nature">
-                </div>
-            </div>
 
-            <!-- Right Side: Content Canvas -->
-            <div class="magazine-right-panel">
-                
-                <div class="editorial-badge">
-                    <span class="badge-brand">Lucy DeWeese</span>
-                    <span class="badge-brand-sub">PHOTOGRAPHY</span>
-                    <span class="badge-established">SINCE 2019</span>
-                </div>
+        <!-- ==========================================
+             ABOUT PAGE
+        =========================================== -->
 
-                <div class="magazine-content-wrapper">
-                    <span class="section-subtitle">The Heart Behind the Camera</span>
-                    <h1 class="magazine-title">Hi, I am <span>Lucy DeWeese</span></h1>
-                    
-                    <div class="decorative-line-container">
-                        <span class="line-dot"></span>
+        <main>
+
+            <section class="editorial-magazine-block">
+
+
+                <!-- ==========================================
+                     PORTRAIT
+                =========================================== -->
+
+                <div class="magazine-left-stack">
+
+                    <div class="stack-img-wrapper">
+
+                        <img
+                            src="./images/lucy-Deweese2026jpg.jpg"
+                            alt="Lucy DeWeese, family photographer"
+                        >
+
                     </div>
 
-                    <div class="magazine-bio-text">
-                        <!-- Short Intro (Always Visible) -->
-                        
-<p class="lead-paragraph">
-    I am a photographer, graphic designer, and mother of three who believes the most meaningful moments are often the simplest ones. The laughter, the little details, the quiet connections, and the love shared between people are the stories I want to preserve.
-</p>
+                </div>
 
-<p>
-    My photography is centered around capturing people as they truly are and preserving the genuine emotions that make each story unique. I believe photographs are a gift we leave for ourselves and for the people we love, preserving the feelings and moments that time cannot replace.
-</p>
-                        <!-- Toggle Button -->
-                        <button id="storyToggleBtn" class="story-toggle-btn">Read My Story <i class="fas fa-chevron-down"></i></button>
 
-                        <!-- Full Timeline Story (Hidden by Default) -->
-<div id="fullStoryContent" class="full-story-hidden">
+                <!-- ==========================================
+                     ABOUT CONTENT
+                =========================================== -->
 
-    <h2 class="timeline-heading">My Story Through Time</h2>
+                <div class="magazine-right-panel">
 
-    <p class="timeline-block">
-        <span class="timeline-year">1997</span>
-        My love for photography began when I was in sixth grade. I found myself drawn to capturing the people around me and preserving the everyday moments that felt special. I loved looking back at those photographs because they held pieces of my life that I never wanted to forget. Even at a young age, I understood how quickly moments pass and how photographs allow us to hold on to the memories that matter most.
-    </p>
 
-    <p>
-        As I grew older, photography remained a quiet passion in my life. I began photographing friends and exploring the art of storytelling through images, continuing to develop my skills and my eye for meaningful moments.
-    </p>
+                    <!-- ==========================================
+                         BRAND BADGE
+                    =========================================== -->
 
-    <p class="timeline-block">
-        <span class="timeline-year">2017</span>
-        Losing my mother, Deusa, changed the way I viewed photographs forever. They became more than images. They became reminders of love, memories, and the precious moments we share with the people who matter most.
-    </p>
+                    <div class="editorial-badge">
 
-    <p class="timeline-block">
-        <span class="timeline-year">2019</span>
-        My daughter, Luna Deusa, was born and brought a new chapter of joy and purpose into my life. Her arrival reminded me that even after seasons of loss, beautiful new beginnings are possible.
-    </p>
+                        <span class="badge-brand">
+                            Lucy DeWeese
+                        </span>
 
-    <p>
-        During that season, while photographing my daughter and studying at BYU–Idaho, I felt inspired to pursue photography more intentionally. What began as a personal passion slowly became a way to help others preserve their own stories and memories.
-    </p>
+                        <span class="badge-brand-sub">
+                            PHOTOGRAPHY
+                        </span>
+                        <span class="badge-established">SINCE 2019</span>
 
-    <p>
-        My studies in Web Design and Development, along with my art and design courses at BYU–Idaho, helped shape my creative vision. Through tools like Adobe Illustrator, Photoshop, Lightroom, and InDesign, I developed a deeper appreciation for combining creativity, design, and storytelling.
-    </p>
+                    </div>
 
-    <p>
-        Today, I have the privilege of capturing the moments that families may one day treasure most. My goal is to create photographs that preserve love, connection, and memories that can be cherished for generations.
-    </p>
 
-</div>
-                    <!-- Connect Section -->
-                    <!-- <div class="magazine-connect">
-                        <h3>Let's Connect</h3>
-                        <div class="connect-links">
-                            <a href="mailto:lucy@email.com">lucy@email.com</a>
-                            <a href="tel:+1234567890">+1 (234) 567-890</a>
-                            <div class="social-inline">
-                                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            </div>
+                    <!-- ==========================================
+                         CONTENT
+                    =========================================== -->
+
+                    <div class="magazine-content-wrapper">
+
+
+                        <!-- Section Label -->
+
+                        <span class="section-subtitle">
+                            The Heart Behind the Camera
+                        </span>
+
+
+                        <!-- Main Heading -->
+
+                        <h1 class="magazine-title">
+
+                            Hi, I’m
+
+                            <span>
+                                Lucy DeWeese
+                            </span>
+
+                        </h1>
+
+
+                        <!-- Decorative Element -->
+
+                        <div
+                            class="decorative-line-container"
+                            aria-hidden="true"
+                        >
+
+                            <span class="line-dot"></span>
+
                         </div>
+
+
+                        <!-- ==========================================
+                             MY STORY
+                        =========================================== -->
+
+                        <div class="magazine-bio-text">
+
+
+                            <!-- Introduction -->
+
+                            <p class="lead-paragraph">
+                                I’m a photographer, graphic designer, and mom of three.
+                                I’ve always loved noticing the little things that make life
+                                special, the laughter, the personalities, the quiet moments,
+                                and the connections we share with the people we love.
+                            </p>
+
+
+                            <!-- Beginning -->
+
+                            <p>
+                                My love for photography began when I was in sixth grade.
+                                Even then, I loved taking pictures of the people and moments
+                                around me and looking back at them years later. I didn’t
+                                realize it at the time, but I was learning something that
+                                would stay with me for the rest of my life. Moments pass,
+                                but photographs give us a way to remember them.
+                            </p>
+
+
+                            <!-- Mother -->
+
+                            <p>
+                                In 2017, I lost my mother, Deusa. Losing her changed the
+                                way I saw photographs. They became more than beautiful
+                                images. They became pieces of a life I could no longer
+                                recreate, and reminders of moments I was grateful to
+                                still have.
+                            </p>
+
+
+                            <!-- Luna -->
+
+                            <p>
+                                Two years later, my daughter Luna Deusa was born. Her
+                                arrival brought so much joy into my life. While photographing
+                                her and studying at BYU Idaho, I began to see photography
+                                differently. What had always been a passion started to feel
+                                like something I wanted to pursue more intentionally.
+                                I realized I could use something I loved to help other
+                                families preserve their own stories.
+                            </p>
+
+
+                            <!-- Creative Background -->
+
+                            <p>
+                                My background in Web Design and Development, along with my
+                                studies in art and design, has also shaped the way I see
+                                photography. I love bringing together creativity,
+                                composition, storytelling, and emotion to create images
+                                that feel personal and genuine.
+                            </p>
+
+
+                            <!-- Today -->
+
+                            <p>
+                                Today, I photograph families because I know how quickly
+                                life changes. Children grow. Seasons pass. The little
+                                moments we live every day become the memories we look
+                                back on.
+                            </p>
+
+
+                            <!-- Closing -->
+
+                            <p class="closing-statement">
+                                And sometimes, a photograph becomes one of the most
+                                precious ways we have to hold on to them.
+                            </p>
+
+                        </div>
+
                     </div>
 
                 </div>
-            </div> -->
 
-        </section>
+            </section>
 
-        <!-- MATCHING BRANDED FOOTER SYSTEM -->
+        </main>
+
+
+        <!-- ==========================================
+             FOOTER
+        =========================================== -->
+
         <footer class="branded-site-footer">
+
+
+            <!-- Social Links -->
+
             <div class="footer-social-wrapper">
-                <a href="#" class="brand-social-icon-link" target="_blank">
-                    <img src="./images/fb.png" alt="Facebook logo" class="brand-social-img">
+
+                <a
+                    href="#"
+                    class="brand-social-icon-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                >
+
+                    <img
+                        src="./images/fb.png"
+                        alt="Facebook"
+                        class="brand-social-img"
+                    >
+
                 </a>
-                <a href="#" class="brand-social-icon-link" target="_blank">
-                    <img src="./images/instagram.png" alt="Instagram logo" class="brand-social-img">
+
+
+                <a
+                    href="#"
+                    class="brand-social-icon-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                >
+
+                    <img
+                        src="./images/instagram.png"
+                        alt="Instagram"
+                        class="brand-social-img"
+                    >
+
                 </a>
+
             </div>
+
+
+            <!-- Copyright -->
+
             <div class="footer-copyright-text">
-                <p>© 2026 Lucy DeWeese Photography</p>
+
+                <p>
+                    © 2026 Lucy DeWeese Photography
+                </p>
+
             </div>
+
         </footer>
 
-    </div> 
+    </div>
 
-    <!-- LINK ONLY TO YOUR INDEPENDENT ABOUT JS -->
+
+    <!-- About Page JavaScript -->
+
     <script src="about.js"></script>
+
 </body>
+
 </html>

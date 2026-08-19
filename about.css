@@ -1,20 +1,26 @@
 /* ==========================================
-   RESET & INDEPENDENT SYSTEM BASICS
-   ========================================== */
+   RESET
+========================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body.site-frame {
-    background-color: #f5ebe0; 
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f5ebe0;
     padding: 3% 4%;
     font-family: "Lato", sans-serif;
     color: #333333;
     overflow-x: hidden;
-    display: flex;
-    justify-content: center;
 }
 
 .page-canvas {
@@ -22,12 +28,17 @@ body.site-frame {
     max-width: 1440px;
     margin: 0 auto;
     overflow: hidden;
-    box-shadow: 
-        0 0 0 25px #AABA99, 
-        0 30px 70px rgba(0, 0, 0, 0.22); 
+
+    box-shadow:
+        0 0 0 25px #AABA99,
+        0 30px 70px rgba(0, 0, 0, 0.22);
 }
 
-/* Base Typographic Constants */
+
+/* ==========================================
+   GENERAL TYPOGRAPHY
+========================================== */
+
 p {
     font-family: "Lato", sans-serif;
     font-size: 1.05rem;
@@ -37,7 +48,7 @@ p {
 
 .section-subtitle {
     display: block;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
     text-transform: uppercase;
     letter-spacing: 3px;
     font-size: 0.8rem;
@@ -46,79 +57,11 @@ p {
     margin-bottom: 10px;
 }
 
-/* Timeline Architecture Headers */
-.timeline-heading {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem;
-    font-weight: 400;
-    color: #064435;
-    margin: 35px 0 20px 0;
-    text-align: left;
-}
-
-.timeline-block {
-    position: relative;
-    margin-bottom: 18px;
-}
-
-.timeline-year {
-    display: block;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #7a6552;
-    margin-bottom: 4px;
-    letter-spacing: 0.5px;
-}
 
 /* ==========================================
-   INTERACTIVE STORY EXPANSION TOGGLE RULES
-   ========================================== */
-.story-toggle-btn {
-    background: transparent;
-    border: 1px solid #064435;
-    color: #064435;
-    padding: 12px 28px;
-    font-family: 'Lato', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    cursor: pointer;
-    margin: 25px 0;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    transition: all 0.3s ease;
-}
+   HEADER
+========================================== */
 
-.story-toggle-btn:hover {
-    background: #064435;
-    color: #ffffff;
-}
-
-.full-story-hidden {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out, opacity 0.4s ease;
-}
-
-.full-story-visible {
-    max-height: 2000px; 
-    opacity: 1;
-    overflow: visible;
-    transition: max-height 0.8s ease-in, opacity 0.6s ease;
-}
-
-.full-story-hidden p,
-.full-story-visible p {
-    margin-bottom: 18px;
-}
-
-/* ==========================================
-   HEADER & NAVIGATION CONTROLS
-   ========================================== */
 .site-header {
     width: 100%;
     position: relative;
@@ -126,17 +69,22 @@ p {
 }
 
 .logo-bar {
+    width: 100%;
     background: #064435;
-    position: relative;
 }
 
-/* .logo-bar img {
-    height: 100px;
-    object-fit: contain;
-} */
+.minimal-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 4%;
+}
+
 .brand-header {
     display: flex;
     flex-direction: column;
+    min-width: 0;
 }
 
 .brand-script {
@@ -150,179 +98,233 @@ p {
 
 .brand-photography {
     font-family: "Lato", sans-serif;
-    font-size: .7rem;
-    color: rgba(255,255,255,.95);
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.95);
     letter-spacing: 6px;
     margin-top: -8px;
     padding-left: 85px;
 }
 
-.minimal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 4% !important;
-}
-
 .back-home-nav {
-    display: block;
+    flex-shrink: 0;
 }
 
 .nav-back-link {
     color: #ffffff;
     text-decoration: none;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
     text-transform: uppercase;
     font-size: 0.8rem;
     letter-spacing: 2px;
     font-weight: 400;
-    transition: color 0.3s ease;
+
     display: inline-flex;
     align-items: center;
     gap: 8px;
+
+    transition: color 0.3s ease;
 }
 
 .nav-back-link:hover {
     color: #ffd700;
 }
 
+
 /* ==========================================
-   EDITORIAL ASYMMETRICAL MAGAZINE LAYOUT
-   ========================================== */
+   MAIN EDITORIAL LAYOUT
+========================================== */
+
 .editorial-magazine-block {
+    width: 100%;
     display: grid;
-    grid-template-columns: 45% 55%; 
-    background-color: #f5ebe0; 
+    grid-template-columns: 45% 55%;
+    background-color: #f5ebe0;
     position: relative;
-    min-height: 100vh;
 }
 
+
+/* ==========================================
+   PORTRAIT
+========================================== */
+
 .magazine-left-stack {
-    display: flex;
-    flex-direction: column;
     width: 100%;
+    min-width: 0;
 }
 
 .stack-img-wrapper {
     width: 100%;
-    height: 33.333vh; 
-    min-height: 300px;
+    height: 100%;
+    min-height: 700px;
     overflow: hidden;
 }
 
 .stack-img-wrapper img {
+    display: block;
+
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-    object-position: center;
-    display: block;
+
+    object-fit: cover;
+    object-position: center center;
 }
 
-/* Right Content Panel */
+
+/* ==========================================
+   RIGHT CONTENT
+========================================== */
+
 .magazine-right-panel {
+    width: 100%;
+    min-width: 0;
+
     padding: 80px 10% 80px 12%;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     position: relative;
 }
 
-/* Overlapping Circular Emblem Accent */
+.magazine-content-wrapper {
+    width: 100%;
+    max-width: 580px;
+}
+
+
+/* ==========================================
+   CIRCULAR BRAND BADGE
+========================================== */
+
 .editorial-badge {
     position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translate(-50%, -50%);
 
-    width: clamp(90px, 12vw, 160px);
-    height: clamp(90px, 12vw, 160px);
+    /*
+       Change these values to move the badge
+       on desktop.
+    */
+
+    top: 120px;
+    left: 0;
+
+    transform: translateX(-50%);
+
+    width: 135px;
+    height: 135px;
 
     background-color: #f5ebe0;
     border-radius: 50%;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 10;
-    box-shadow: -10px 0 20px rgba(0, 0, 0, 0.02);
-    padding: clamp(6px, 1vw, 15px);
+
+    padding: 12px;
+
     text-align: center;
+
     border: 1px dashed rgba(122, 101, 82, 0.25);
+
+    box-shadow:
+        -10px 0 20px rgba(0, 0, 0, 0.02);
+
+    z-index: 10;
 }
 
 .badge-brand {
-    font-family: 'Satisfy', cursive;
-    font-size: 1.2rem;
+    font-family: "Satisfy", cursive;
+    font-size: 1.25rem;
     color: #064435;
     line-height: 1.2;
 }
 
 .badge-brand-sub {
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
     font-size: 0.55rem;
     letter-spacing: 2px;
     color: #064435;
-    margin-top: 2px;
-    margin-bottom: 8px;
+    margin-top: 3px;
     font-weight: 700;
 }
 
-.badge-established {
-    font-family: 'Lato', sans-serif;
-    font-size: 0.65rem;
-    letter-spacing: 1px;
-    color: #7a6552;
-    text-transform: uppercase;
-    font-weight: 400;
-}
 
-/* Typography Elements */
-.magazine-content-wrapper {
-    max-width: 580px;
-    width: 100%;
-}
+/* ==========================================
+   TITLE
+========================================== */
 
 .magazine-title {
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
+
     font-size: 3.5rem;
     font-weight: 700;
+
     letter-spacing: 3px;
     color: #064435;
+
     line-height: 0.9;
+
     margin-top: 10px;
     margin-bottom: 25px;
+
     text-transform: uppercase;
 }
 
 .magazine-title span {
     display: block;
-    font-family: 'Satisfy', cursive;
+
+    font-family: "Satisfy", cursive;
+
     font-size: 3.2rem;
     font-weight: 400;
+
     color: #7a6552;
+
     text-transform: none;
     letter-spacing: 0;
+
     margin-top: 8px;
 }
 
-/* Divider Elements */
+
+/* ==========================================
+   DECORATIVE LINE
+========================================== */
+
 .decorative-line-container {
     width: 1px;
     height: 80px;
+
     background-color: rgba(6, 68, 53, 0.2);
+
     margin: 30px 0;
+
     position: relative;
 }
 
 .line-dot {
     position: absolute;
+
     bottom: -5px;
     left: 50%;
+
     transform: translateX(-50%);
+
     width: 10px;
     height: 10px;
+
     background-color: #7a6552;
     border-radius: 50%;
+}
+
+
+/* ==========================================
+   STORY
+========================================== */
+
+.magazine-bio-text {
+    width: 100%;
 }
 
 .magazine-bio-text p {
@@ -330,71 +332,56 @@ p {
 }
 
 .magazine-bio-text p.lead-paragraph {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: "Cormorant Garamond", serif;
+
     font-size: 1.5rem;
     line-height: 1.6;
+
     color: #064435;
+
     font-style: italic;
+
     margin-bottom: 30px;
 }
 
-/* Contact Area within panel */
-.magazine-connect {
-    margin-top: 50px;
-    padding-top: 35px;
-    border-top: 1px dashed rgba(122, 101, 82, 0.3);
-}
-
-.magazine-connect h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    font-weight: 400;
-    color: #064435;
-    margin-bottom: 15px;
-}
-
-.connect-links {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 25px;
-}
-
-.connect-links a {
-    color: #7a6552;
-    font-family: 'Lato', sans-serif;
-    text-decoration: none;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    transition: color 0.2s ease;
-}
-
-.connect-links a:hover {
-    color: #064435;
-}
-
-.social-inline {
-    display: inline-flex;
-    gap: 15px;
-}
-
-.social-inline a {
-    font-size: 1rem;
-}
 
 /* ==========================================
-   BRAND MATCHED HOME-STYLE FOOTER BLOCK
-   ========================================== */
+   CLOSING STATEMENT
+========================================== */
+
+.closing-statement {
+    font-family: "Cormorant Garamond", serif !important;
+
+    font-size: 1.6rem !important;
+    line-height: 1.5 !important;
+
+    color: #064435 !important;
+
+    font-style: italic;
+
+    margin-top: 35px;
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
 .branded-site-footer {
+    width: 100%;
+
     background-color: #064435;
+
     text-align: center;
-    padding: 30px 20px 25px 20px;
+
+    padding: 30px 20px 25px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     gap: 12px;
-    width: 100%;
 }
 
 .footer-social-wrapper {
@@ -406,7 +393,10 @@ p {
 
 .brand-social-icon-link {
     display: inline-block;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
 }
 
 .brand-social-icon-link:hover {
@@ -415,98 +405,536 @@ p {
 }
 
 .brand-social-img {
-    width: 32px;  
+    width: 32px;
     height: 32px;
+
     object-fit: contain;
     display: block;
 }
 
 .branded-site-footer .footer-copyright-text p {
     color: rgba(255, 255, 255, 0.7);
+
     font-family: "Lato", sans-serif;
+
     font-size: 0.85rem;
+
     letter-spacing: 1px;
+
+    font-weight: 400;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   LARGE TABLETS / SMALL LAPTOPS
+   769px - 1100px
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    body.site-frame {
+        padding: 2.5% 3%;
+    }
+
+    .editorial-magazine-block {
+        grid-template-columns: 43% 57%;
+    }
+
+    .magazine-right-panel {
+        padding: 70px 7% 70px 10%;
+    }
+
+    .stack-img-wrapper {
+        min-height: 650px;
+    }
+
+    .magazine-title {
+        font-size: 3rem;
+    }
+
+    .magazine-title span {
+        font-size: 2.8rem;
+    }
+
+    .editorial-badge {
+        width: 115px;
+        height: 115px;
+    }
+
+    .badge-brand {
+        font-size: 1.05rem;
+    }
+
+    .badge-brand-sub {
+        font-size: 0.48rem;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+   601px - 768px
+========================================================= */
+
+@media (max-width: 768px) {
+
+    body.site-frame {
+        padding: 0;
+    }
+
+    .page-canvas {
+        width: 100%;
+        max-width: none;
+
+        box-shadow: none;
+    }
+
+
+    /* ------------------------------------------
+       HEADER
+    ------------------------------------------ */
+
+    .minimal-header {
+        padding: 20px 24px;
+    }
+
+    .brand-script {
+        font-size: 3rem;
+    }
+
+    .brand-photography {
+        font-size: 0.55rem;
+        letter-spacing: 4px;
+        padding-left: 60px;
+        margin-top: -6px;
+    }
+
+    .nav-back-link {
+        font-size: 0.7rem;
+        letter-spacing: 1.5px;
+    }
+
+
+    /* ------------------------------------------
+       MAIN
+    ------------------------------------------ */
+
+    .editorial-magazine-block {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+
+    /* ------------------------------------------
+       IMAGE
+
+       IMPORTANT:
+       The image height is based on its width.
+       It will adapt naturally to different
+       tablet and phone sizes.
+    ------------------------------------------ */
+
+    .magazine-left-stack {
+        width: 100%;
+    }
+
+    .stack-img-wrapper {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+    }
+
+    .stack-img-wrapper img {
+        width: 100%;
+        height: auto;
+
+        object-fit: contain;
+        object-position: center;
+
+        display: block;
+    }
+
+
+    /* ------------------------------------------
+       CONTENT
+    ------------------------------------------ */
+
+    .magazine-right-panel {
+        width: 100%;
+
+        padding: 65px 7% 60px;
+
+        display: block;
+    }
+
+    .magazine-content-wrapper {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* ------------------------------------------
+       BADGE
+
+       The badge becomes part of the layout
+       instead of floating over the page.
+    ------------------------------------------ */
+
+    .editorial-badge {
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        transform: none;
+
+        width: 95px;
+        height: 95px;
+
+        margin: -48px auto 30px;
+
+        padding: 8px;
+
+        z-index: 10;
+    }
+
+    .badge-brand {
+        font-size: 0.8rem;
+        line-height: 1.1;
+    }
+
+    .badge-brand-sub {
+        font-size: 0.4rem;
+        letter-spacing: 1px;
+
+        margin-top: 2px;
+    }
+
+
+    /* ------------------------------------------
+       SECTION LABEL
+    ------------------------------------------ */
+
+    .section-subtitle {
+        font-size: 0.7rem;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 12px;
+    }
+
+
+    /* ------------------------------------------
+       TITLE
+    ------------------------------------------ */
+
+    .magazine-title {
+        font-size: 2.6rem;
+
+        line-height: 1;
+
+        letter-spacing: 2px;
+
+        margin-top: 8px;
+        margin-bottom: 20px;
+    }
+
+    .magazine-title span {
+        font-size: 2.7rem;
+
+        margin-top: 6px;
+    }
+
+
+    /* ------------------------------------------
+       DECORATIVE LINE
+    ------------------------------------------ */
+
+    .decorative-line-container {
+        height: 55px;
+
+        margin: 20px 0 28px;
+    }
+
+
+    /* ------------------------------------------
+       STORY
+    ------------------------------------------ */
+
+    .magazine-bio-text p {
+        font-size: 1rem;
+
+        line-height: 1.75;
+
+        margin-bottom: 22px;
+    }
+
+    .magazine-bio-text p.lead-paragraph {
+        font-size: 1.3rem;
+
+        line-height: 1.55;
+
+        margin-bottom: 28px;
+    }
+
+
+    /* ------------------------------------------
+       CLOSING
+    ------------------------------------------ */
+
+    .closing-statement {
+        font-size: 1.4rem !important;
+
+        line-height: 1.5 !important;
+
+        margin-top: 30px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   481px - 600px
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .minimal-header {
+        padding: 18px 18px;
+    }
+
+    .brand-script {
+        font-size: 2.7rem;
+    }
+
+    .brand-photography {
+        font-size: 0.5rem;
+        letter-spacing: 3.5px;
+        padding-left: 52px;
+    }
+
+    .nav-back-link {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+
+        gap: 6px;
+    }
+
+
+    /* Content */
+
+    .magazine-right-panel {
+        padding: 58px 6% 50px;
+    }
+
+
+    /* Badge */
+
+    .editorial-badge {
+        width: 85px;
+        height: 85px;
+
+        margin: -43px auto 26px;
+
+        padding: 6px;
+    }
+
+    .badge-brand {
+        font-size: 0.7rem;
+    }
+
+    .badge-brand-sub {
+        font-size: 0.35rem;
+        letter-spacing: 0.7px;
+    }
+
+
+    /* Title */
+
+    .magazine-title {
+        font-size: 2.3rem;
+
+        letter-spacing: 1.5px;
+    }
+
+    .magazine-title span {
+        font-size: 2.4rem;
+    }
+
+
+    /* Text */
+
+    .magazine-bio-text p {
+        font-size: 0.98rem;
+
+        line-height: 1.72;
+    }
+
+    .magazine-bio-text p.lead-paragraph {
+        font-size: 1.22rem;
+
+        line-height: 1.55;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   400px and below
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .minimal-header {
+        padding: 16px 14px;
+    }
+
+    .brand-script {
+        font-size: 2.25rem;
+    }
+
+    .brand-photography {
+        font-size: 0.43rem;
+
+        letter-spacing: 2.5px;
+
+        padding-left: 42px;
+
+        margin-top: -4px;
+    }
+
+    .nav-back-link {
+        font-size: 0.58rem;
+
+        letter-spacing: 0.7px;
+
+        gap: 5px;
+    }
+
+
+    /* Content */
+
+    .magazine-right-panel {
+        padding: 52px 20px 45px;
+    }
+
+
+    /* Badge */
+
+    .editorial-badge {
+        width: 78px;
+        height: 78px;
+
+        margin: -39px auto 24px;
+
+        padding: 5px;
+    }
+
+    .badge-brand {
+        font-size: 0.63rem;
+    }
+
+    .badge-brand-sub {
+        font-size: 0.31rem;
+
+        letter-spacing: 0.5px;
+    }
+
+
+    /* Section */
+
+    .section-subtitle {
+        font-size: 0.62rem;
+
+        letter-spacing: 1.6px;
+    }
+
+
+    /* Title */
+
+    .magazine-title {
+        font-size: 2rem;
+
+        letter-spacing: 1px;
+
+        line-height: 1.05;
+    }
+
+    .magazine-title span {
+        font-size: 2.15rem;
+    }
+
+
+    /* Decorative line */
+
+    .decorative-line-container {
+        height: 45px;
+
+        margin: 18px 0 25px;
+    }
+
+
+    /* Story */
+
+    .magazine-bio-text p {
+        font-size: 0.95rem;
+
+        line-height: 1.7;
+
+        margin-bottom: 20px;
+    }
+
+    .magazine-bio-text p.lead-paragraph {
+        font-size: 1.15rem;
+
+        line-height: 1.5;
+    }
+
+
+    /* Closing */
+
+    .closing-statement {
+        font-size: 1.3rem !important;
+    }
+
+
+    /* Footer */
+
+    .branded-site-footer {
+        padding: 24px 15px 20px;
+    }
+
+    .branded-site-footer .footer-copyright-text p {
+        font-size: 0.75rem;
+    }
+
+}
+.badge-established {
+    font-family: "Lato", sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    color: #7a6552;
+    text-transform: uppercase;
     font-weight: 400;
 }
 
 @media (max-width: 768px) {
-    /* 1. Force the badge back to the dead-center (50%) of the split container */
-    .editorial-magazine-block .editorial-badge {
-        width: 95px !important;
-        height: 95px !important;
-        position: absolute !important;
-        top: 50% !important; /* Keeps it perfectly locked to the middle photo */
-        left: 0 !important;   
-        transform: translate(-50%, -50%) !important;
-        padding: 8px !important;
-        z-index: 20;
-    }
-
-    /* Keep the tiny text dimensions intact */
-    .badge-brand {
-        font-size: 0.7rem !important;
-        line-height: 1.1 !important;
-    }
-    .badge-brand-sub {
-        font-size: 0.38rem !important;
-        margin-top: 1px !important;
-        margin-bottom: 3px !important;
-        letter-spacing: 1px !important;
-    }
     .badge-established {
-        font-size: 0.4rem !important;
-        letter-spacing: 0.5px !important;
-    }
-
-    /* 2. Prevent faces from being cut off on mobile */
-    /* Target the second (middle) image wrapper and shift its crop focus to the right */
-    .magazine-left-stack .stack-img-wrapper:nth-child(2) img {
-        object-position: 80% center !important; 
-    }
-    
-    /* Target the first image wrapper to ensure it remains nicely centered */
-    .magazine-left-stack .stack-img-wrapper:nth-child(1) img {
-        object-position: center center !important;
+        font-size: 0.4rem;
+        letter-spacing: 0.5px;
     }
 }
 
-@media (max-width: 480px) {
-    .editorial-magazine-block .editorial-badge {
-        width: 80px !important;
-        height: 80px !important;
-        top: 50% !important; /* Keep centered on tiny screens */
-        padding: 4px !important;
-    }
-
-    .badge-brand {
-        font-size: 0.6rem !important;
-        line-height: 1.0 !important;
-    }
-    .badge-brand-sub {
-        font-size: 0.32rem !important;
-        margin-top: 0px !important;
-        margin-bottom: 2px !important;
-        letter-spacing: 0.5px !important;
-    }
+@media (max-width: 400px) {
     .badge-established {
-        font-size: 0.35rem !important;
-        letter-spacing: 0px !important;
+        font-size: 0.32rem;
+        letter-spacing: 0.3px;
     }
-}
-
-@media (max-width:600px){
-
-    .logo-bar {
-        padding:30px 15px 25px;
-    }
-
-    .brand-script {
-        font-size:3rem;
-    }
-
-    .brand-photography {
-        font-size:.55rem;
-        letter-spacing:4px;
-    }
-
 }
