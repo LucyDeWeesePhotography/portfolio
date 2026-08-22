@@ -1458,3 +1458,150 @@ footer p {
         scroll-margin-top: 80px !important;
     }
 }
+
+/* ==========================================
+   MOBILE & TABLET HEADER FIXES
+   ========================================== */
+
+/* 1. Ensure your custom font loads correctly (replace with your actual font file path) */
+@font-face {
+  font-family: 'Beauty';
+  src: url('./fonts/beauty.woff2') format('woff2'),
+       url('./fonts/beauty.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 2. Responsive Header & Logo Bar Rules */
+@media (max-width: 768px) {
+  
+  .site-header {
+    position: relative;
+    background: #064435;
+  }
+
+  .logo-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    text-align: left;
+  }
+
+  .brand-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 75%;
+  }
+
+  /* Scale brand name down for small screens */
+  .brand-script {
+    font-size: 2.2rem !important;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+
+  /* Adjust subtext layout and letter spacing */
+  .brand-photography {
+    font-size: 0.55rem !important;
+    letter-spacing: 3px !important;
+    margin-top: 2px !important;
+    padding-left: 0 !important;
+    width: 100%;
+    text-align: left;
+  }
+
+  /* Display and position the mobile menu toggle button */
+  .menu-toggle-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 101;
+  }
+
+  .menu-toggle-btn .bar {
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 2px;
+  }
+
+  /* Slide-out mobile menu panel styling */
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background: #064435;
+    padding: 60px 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+
+  .navbar.is-active {
+    right: 0;
+  }
+
+  .navbar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+  }
+
+  .navbar li {
+    display: block;
+    margin: 0;
+  }
+
+  .menu-close-btn {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 28px;
+  }
+
+  .brand-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 12px; /* Adjust higher if you want even more breathing room */
+  }
+}
+
+
+/* Push overlay card down on mobile & tablet views */
+@media (max-width: 900px) {
+  .overlay-top-left-card {
+    top: 40px !important; /* Pushes card down below nav bar on tablets */
+    left: 25px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .overlay-top-left-card {
+    top: 35px !important; /* Pushes card down below nav bar on phones */
+    left: 20px !important;
+  }
+}
