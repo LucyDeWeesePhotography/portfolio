@@ -1,6 +1,6 @@
 /* ==========================================
    CUSTOM FONT IMPORT (SERVER-HOSTED)
-   ========================================== */
+========================================== */
 @font-face {
     font-family: 'Beauty';
     src: url('fonts/BEAUTYDEMO.TTF') format('truetype');
@@ -10,9 +10,8 @@
 }
 
 /* ==========================================
-   RESET
+   RESET & FRAME SETUP
 ========================================== */
-
 * {
     margin: 0;
     padding: 0;
@@ -39,17 +38,14 @@ body.site-frame {
     max-width: 1440px;
     margin: 0 auto;
     overflow: hidden;
-
     box-shadow:
         0 0 0 25px #AABA99,
         0 30px 70px rgba(0, 0, 0, 0.22);
 }
 
-
 /* ==========================================
    GENERAL TYPOGRAPHY
 ========================================== */
-
 p {
     font-family: "Lato", sans-serif;
     font-size: 1.05rem;
@@ -68,11 +64,9 @@ p {
     margin-bottom: 10px;
 }
 
-
 /* ==========================================
-   HEADER
+   HEADER & BRAND (DESKTOP)
 ========================================== */
-
 .site-header {
     width: 100%;
     position: relative;
@@ -82,52 +76,41 @@ p {
 .logo-bar {
     width: 100%;
     background: #064435;
-}
-
-.minimal-header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 4%;
+    text-align: center;
+    padding: 40px 20px 25px;
 }
 
 .brand-header {
     display: flex;
     flex-direction: column;
-    min-width: 0;
 }
 
 .brand-script {
     font-family: 'Beauty', cursive; 
-    font-size: 5rem;
+    font-size: 3.8rem;
     font-weight: 400;
-    color: #ffffff;
-    line-height: 1.15; /* Increased from 1 to give room for script tails */
+    color: white;
+    line-height: 1;
     letter-spacing: 1px;
 }
 
 .brand-photography {
     font-family: "Lato", sans-serif;
-    font-size: 0.7rem;
-    color: rgba(255, 255, 255, 0.95);
+    font-size: .7rem;
+    color: rgba(255,255,255,.95);
     letter-spacing: 6px;
-    margin-top: -10px;
-    padding-left: 110px; /* Increased from 100px to push it further right */
+    margin-top: -8px;
+    padding-left: 85px;
 }
 
-@media (max-width: 600px) {
-    .brand-photography {
-        font-size: 0.55rem !important;
-        letter-spacing: 4px !important;
-        margin-top: 2px !important;      /* Drops it down just below the 'y' loop */
-        padding-left: 110px !important;  /* Shifts it safely to the right of the loop */
-        display: block !important;
-    }
-}
-
+/* ==========================================
+   BACK TO HOME NAVIGATION (ALL VIEWS)
+========================================== */
 .back-home-nav {
-    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-end; /* Keeps link aligned to far right */
+    width: 100%;
+    margin-top: 15px;
 }
 
 .nav-back-link {
@@ -138,11 +121,9 @@ p {
     font-size: 0.8rem;
     letter-spacing: 2px;
     font-weight: 400;
-
     display: inline-flex;
     align-items: center;
     gap: 8px;
-
     transition: color 0.3s ease;
 }
 
@@ -150,11 +131,9 @@ p {
     color: #ffd700;
 }
 
-
 /* ==========================================
    MAIN EDITORIAL LAYOUT
 ========================================== */
-
 .editorial-magazine-block {
     width: 100%;
     display: grid;
@@ -163,11 +142,9 @@ p {
     position: relative;
 }
 
-
 /* ==========================================
    PORTRAIT
 ========================================== */
-
 .magazine-left-stack {
     width: 100%;
     min-width: 0;
@@ -182,29 +159,22 @@ p {
 
 .stack-img-wrapper img {
     display: block;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
     object-position: center center;
 }
 
-
 /* ==========================================
    RIGHT CONTENT
 ========================================== */
-
 .magazine-right-panel {
     width: 100%;
     min-width: 0;
-
     padding: 80px 10% 80px 12%;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     position: relative;
 }
 
@@ -213,44 +183,26 @@ p {
     max-width: 580px;
 }
 
-
 /* ==========================================
    CIRCULAR BRAND BADGE
 ========================================== */
-
 .editorial-badge {
     position: absolute;
-
-    /*
-       Change these values to move the badge
-       on desktop.
-    */
-
     top: 120px;
     left: 0;
-
     transform: translateX(-50%);
-
     width: 135px;
     height: 135px;
-
     background-color: #f5ebe0;
     border-radius: 50%;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     padding: 12px;
-
     text-align: center;
-
     border: 1px dashed rgba(122, 101, 82, 0.25);
-
-    box-shadow:
-        -10px 0 20px rgba(0, 0, 0, 0.02);
-
+    box-shadow: -10px 0 20px rgba(0, 0, 0, 0.02);
     z-index: 10;
 }
 
@@ -270,80 +222,63 @@ p {
     font-weight: 700;
 }
 
+.badge-established {
+    font-family: "Lato", sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    color: #7a6552;
+    text-transform: uppercase;
+    font-weight: 400;
+}
 
 /* ==========================================
-   TITLE
+   TITLE & DECORATION
 ========================================== */
-
 .magazine-title {
     font-family: "Lato", sans-serif;
-
     font-size: 3.5rem;
     font-weight: 700;
-
     letter-spacing: 3px;
     color: #064435;
-
     line-height: 0.9;
-
     margin-top: 10px;
     margin-bottom: 25px;
-
     text-transform: uppercase;
 }
 
 .magazine-title span {
     display: block;
-
     font-family: "Satisfy", cursive;
-
     font-size: 3.2rem;
     font-weight: 400;
-
     color: #7a6552;
-
     text-transform: none;
     letter-spacing: 0;
-
     margin-top: 8px;
 }
-
-
-/* ==========================================
-   DECORATIVE LINE
-========================================== */
 
 .decorative-line-container {
     width: 1px;
     height: 80px;
-
     background-color: rgba(6, 68, 53, 0.2);
-
     margin: 30px 0;
-
     position: relative;
 }
 
 .line-dot {
     position: absolute;
-
     bottom: -5px;
     left: 50%;
-
     transform: translateX(-50%);
-
     width: 10px;
     height: 10px;
-
     background-color: #7a6552;
     border-radius: 50%;
 }
 
-
 /* ==========================================
-   STORY
+   STORY & CLOSING
 ========================================== */
-
 .magazine-bio-text {
     width: 100%;
 }
@@ -354,54 +289,34 @@ p {
 
 .magazine-bio-text p.lead-paragraph {
     font-family: "Cormorant Garamond", serif;
-
     font-size: 1.5rem;
     line-height: 1.6;
-
     color: #064435;
-
     font-style: italic;
-
     margin-bottom: 30px;
 }
 
-
-/* ==========================================
-   CLOSING STATEMENT
-========================================== */
-
 .closing-statement {
     font-family: "Cormorant Garamond", serif !important;
-
     font-size: 1.6rem !important;
     line-height: 1.5 !important;
-
     color: #064435 !important;
-
     font-style: italic;
-
     margin-top: 35px;
 }
-
 
 /* ==========================================
    FOOTER
 ========================================== */
-
 .branded-site-footer {
     width: 100%;
-
     background-color: #064435;
-
     text-align: center;
-
     padding: 30px 20px 25px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     gap: 12px;
 }
 
@@ -414,10 +329,7 @@ p {
 
 .brand-social-icon-link {
     display: inline-block;
-
-    transition:
-        transform 0.2s ease,
-        opacity 0.2s ease;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .brand-social-icon-link:hover {
@@ -428,33 +340,23 @@ p {
 .brand-social-img {
     width: 32px;
     height: 32px;
-
     object-fit: contain;
     display: block;
 }
 
 .branded-site-footer .footer-copyright-text p {
     color: rgba(255, 255, 255, 0.7);
-
     font-family: "Lato", sans-serif;
-
     font-size: 0.85rem;
-
     letter-spacing: 1px;
-
     font-weight: 400;
-
     margin: 0;
 }
 
-
 /* =========================================================
-   LARGE TABLETS / SMALL LAPTOPS
-   769px - 1100px
+   LARGE TABLETS / SMALL LAPTOPS (769px - 1100px)
 ========================================================= */
-
 @media (max-width: 1100px) {
-
     body.site-frame {
         padding: 2.5% 3%;
     }
@@ -491,17 +393,12 @@ p {
     .badge-brand-sub {
         font-size: 0.48rem;
     }
-
 }
 
-
 /* =========================================================
-   TABLET
-   601px - 768px
+   TABLET & MOBILE BREAKPOINT (UP TO 768px)
 ========================================================= */
-
 @media (max-width: 768px) {
-
     body.site-frame {
         padding: 0;
     }
@@ -509,56 +406,44 @@ p {
     .page-canvas {
         width: 100%;
         max-width: none;
-
         box-shadow: none;
     }
 
-
-    /* ------------------------------------------
-       HEADER
-    ------------------------------------------ */
-
+    /* HEADER FIXES */
     .minimal-header {
-        padding: 20px 24px;
+        padding: 20px 24px !important;
+        align-items: center !important;
     }
 
+    .logo-bar .brand-script,
     .brand-script {
-        font-size: 3rem;
+        font-size: 2.5rem !important;
+        line-height: 1 !important;
+        margin: 0 0 4px 0 !important;
     }
 
+    .logo-bar .brand-photography,
     .brand-photography {
-        font-size: 0.55rem;
-        letter-spacing: 4px;
-        padding-left: 60px;
-        margin-top: -6px;
+        font-size: 0.5rem !important;
+        letter-spacing: 4px !important;
+        margin-top: -3px !important;
+        padding-left: 0 !important;
+        position: relative !important;
+        left: 22px !important; /* Locks 'P' beside 'y' */
+        display: block !important;
     }
 
     .nav-back-link {
-        font-size: 0.7rem;
-        letter-spacing: 1.5px;
+        font-size: 0.7rem !important;
+        letter-spacing: 1.5px !important;
     }
 
-
-    /* ------------------------------------------
-       MAIN
-    ------------------------------------------ */
-
+    /* LAYOUT CONTENT */
     .editorial-magazine-block {
         display: flex;
         flex-direction: column;
-
         width: 100%;
     }
-
-
-    /* ------------------------------------------
-       IMAGE
-
-       IMPORTANT:
-       The image height is based on its width.
-       It will adapt naturally to different
-       tablet and phone sizes.
-    ------------------------------------------ */
 
     .magazine-left-stack {
         width: 100%;
@@ -573,23 +458,14 @@ p {
     .stack-img-wrapper img {
         width: 100%;
         height: auto;
-
         object-fit: contain;
         object-position: center;
-
         display: block;
     }
 
-
-    /* ------------------------------------------
-       CONTENT
-    ------------------------------------------ */
-
     .magazine-right-panel {
         width: 100%;
-
         padding: 65px 7% 60px;
-
         display: block;
     }
 
@@ -598,29 +474,15 @@ p {
         max-width: 100%;
     }
 
-
-    /* ------------------------------------------
-       BADGE
-
-       The badge becomes part of the layout
-       instead of floating over the page.
-    ------------------------------------------ */
-
     .editorial-badge {
         position: relative;
-
         top: auto;
         left: auto;
-
         transform: none;
-
         width: 95px;
         height: 95px;
-
         margin: -48px auto 30px;
-
         padding: 8px;
-
         z-index: 10;
     }
 
@@ -632,137 +494,91 @@ p {
     .badge-brand-sub {
         font-size: 0.4rem;
         letter-spacing: 1px;
-
         margin-top: 2px;
     }
 
-
-    /* ------------------------------------------
-       SECTION LABEL
-    ------------------------------------------ */
+    .badge-established {
+        font-size: 0.4rem;
+        letter-spacing: 0.5px;
+    }
 
     .section-subtitle {
         font-size: 0.7rem;
-
         letter-spacing: 2px;
-
         margin-bottom: 12px;
     }
 
-
-    /* ------------------------------------------
-       TITLE
-    ------------------------------------------ */
-
     .magazine-title {
         font-size: 2.6rem;
-
         line-height: 1;
-
         letter-spacing: 2px;
-
         margin-top: 8px;
         margin-bottom: 20px;
     }
 
     .magazine-title span {
         font-size: 2.7rem;
-
         margin-top: 6px;
     }
 
-
-    /* ------------------------------------------
-       DECORATIVE LINE
-    ------------------------------------------ */
-
     .decorative-line-container {
         height: 55px;
-
         margin: 20px 0 28px;
     }
 
-
-    /* ------------------------------------------
-       STORY
-    ------------------------------------------ */
-
     .magazine-bio-text p {
         font-size: 1rem;
-
         line-height: 1.75;
-
         margin-bottom: 22px;
     }
 
     .magazine-bio-text p.lead-paragraph {
         font-size: 1.3rem;
-
         line-height: 1.55;
-
         margin-bottom: 28px;
     }
 
-
-    /* ------------------------------------------
-       CLOSING
-    ------------------------------------------ */
-
     .closing-statement {
         font-size: 1.4rem !important;
-
         line-height: 1.5 !important;
-
         margin-top: 30px;
     }
-
 }
 
-
 /* =========================================================
-   SMALL PHONES
-   481px - 600px
+   SMALL PHONES (481px - 600px)
 ========================================================= */
-
 @media (max-width: 600px) {
-
     .minimal-header {
-        padding: 18px 18px;
+        padding: 18px 18px !important;
     }
 
+    .logo-bar .brand-script,
     .brand-script {
-        font-size: 2.7rem;
+        font-size: 2.3rem !important;
     }
 
+    .logo-bar .brand-photography,
     .brand-photography {
-        font-size: 0.5rem;
-        letter-spacing: 3.5px;
-        padding-left: 52px;
+        font-size: 0.48rem !important;
+        letter-spacing: 3.5px !important;
+        left: 20px !important;
     }
 
     .nav-back-link {
-        font-size: 0.65rem;
-        letter-spacing: 1px;
-
+        font-size: 0.65rem !important;
+        letter-spacing: 1px !important;
         gap: 6px;
     }
-
-
-    /* Content */
 
     .magazine-right-panel {
         padding: 58px 6% 50px;
     }
 
-
-    /* Badge */
-
     .editorial-badge {
         width: 85px;
         height: 85px;
-
         margin: -43px auto 26px;
-
         padding: 6px;
     }
 
@@ -775,12 +591,8 @@ p {
         letter-spacing: 0.7px;
     }
 
-
-    /* Title */
-
     .magazine-title {
         font-size: 2.3rem;
-
         letter-spacing: 1.5px;
     }
 
@@ -788,73 +600,51 @@ p {
         font-size: 2.4rem;
     }
 
-
-    /* Text */
-
     .magazine-bio-text p {
         font-size: 0.98rem;
-
         line-height: 1.72;
     }
 
     .magazine-bio-text p.lead-paragraph {
         font-size: 1.22rem;
-
         line-height: 1.55;
     }
-
 }
 
-
 /* =========================================================
-   VERY SMALL PHONES
-   400px and below
+   VERY SMALL PHONES (400px AND BELOW)
 ========================================================= */
-
 @media (max-width: 400px) {
-
     .minimal-header {
-        padding: 16px 14px;
+        padding: 16px 14px !important;
     }
 
+    .logo-bar .brand-script,
     .brand-script {
-        font-size: 2.25rem;
+        font-size: 2.1rem !important;
     }
 
+    .logo-bar .brand-photography,
     .brand-photography {
-        font-size: 0.43rem;
-
-        letter-spacing: 2.5px;
-
-        padding-left: 42px;
-
-        margin-top: -4px;
+        font-size: 0.43rem !important;
+        letter-spacing: 2.5px !important;
+        left: 18px !important;
     }
 
     .nav-back-link {
-        font-size: 0.58rem;
-
-        letter-spacing: 0.7px;
-
+        font-size: 0.58rem !important;
+        letter-spacing: 0.7px !important;
         gap: 5px;
     }
-
-
-    /* Content */
 
     .magazine-right-panel {
         padding: 52px 20px 45px;
     }
 
-
-    /* Badge */
-
     .editorial-badge {
         width: 78px;
         height: 78px;
-
         margin: -39px auto 24px;
-
         padding: 5px;
     }
 
@@ -864,27 +654,22 @@ p {
 
     .badge-brand-sub {
         font-size: 0.31rem;
-
         letter-spacing: 0.5px;
     }
 
-
-    /* Section */
+    .badge-established {
+        font-size: 0.32rem;
+        letter-spacing: 0.3px;
+    }
 
     .section-subtitle {
         font-size: 0.62rem;
-
         letter-spacing: 1.6px;
     }
 
-
-    /* Title */
-
     .magazine-title {
         font-size: 2rem;
-
         letter-spacing: 1px;
-
         line-height: 1.05;
     }
 
@@ -892,41 +677,25 @@ p {
         font-size: 2.15rem;
     }
 
-
-    /* Decorative line */
-
     .decorative-line-container {
         height: 45px;
-
         margin: 18px 0 25px;
     }
 
-
-    /* Story */
-
     .magazine-bio-text p {
         font-size: 0.95rem;
-
         line-height: 1.7;
-
         margin-bottom: 20px;
     }
 
     .magazine-bio-text p.lead-paragraph {
         font-size: 1.15rem;
-
         line-height: 1.5;
     }
-
-
-    /* Closing */
 
     .closing-statement {
         font-size: 1.3rem !important;
     }
-
-
-    /* Footer */
 
     .branded-site-footer {
         padding: 24px 15px 20px;
@@ -934,28 +703,5 @@ p {
 
     .branded-site-footer .footer-copyright-text p {
         font-size: 0.75rem;
-    }
-
-}
-.badge-established {
-    font-family: "Lato", sans-serif;
-    font-size: 0.65rem;
-    letter-spacing: 1px;
-    color: #7a6552;
-    text-transform: uppercase;
-    font-weight: 400;
-}
-
-@media (max-width: 768px) {
-    .badge-established {
-        font-size: 0.4rem;
-        letter-spacing: 0.5px;
-    }
-}
-
-@media (max-width: 400px) {
-    .badge-established {
-        font-size: 0.32rem;
-        letter-spacing: 0.3px;
     }
 }

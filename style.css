@@ -73,7 +73,7 @@ body.site-frame {
 
 /* Main Brand Name */
 .brand-script {
-    font-family: 'Beauty', 'Satisfy', cursive; 
+    font-family: 'Beauty', cursive; 
     font-size: 5rem;
     font-weight: 400;
     color: #ffffff;
@@ -1618,4 +1618,17 @@ footer p {
     top: 35px !important; /* Pushes card down below nav bar on phones */
     left: 20px !important;
   }
+}
+
+
+/* ==========================================
+   MOBILE POSITIONING ADJUSTMENT: PHOTOGRAPHY
+   ========================================== */
+@media (max-width: 600px) {
+    .brand-photography {
+        padding-left: 35px !important; /* Increase this value (e.g., 40px, 45px) to push further right */
+        letter-spacing: 4px !important; /* Prevents text overflow while moving right */
+        display: block !important;
+        text-align: center !important;
+    }
 }
