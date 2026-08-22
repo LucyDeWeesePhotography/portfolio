@@ -1,6 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&family=Satisfy&display=swap");
 
 /* ==========================================
+   CUSTOM FONT IMPORT (SERVER-HOSTED)
+   ========================================== */
+@font-face {
+    font-family: 'Beauty';
+    /* Replace with your exact domain or root path */
+    src: url('https://yourdomain.com/fonts/Beauty.woff2') format('woff2'),
+         url('https://yourdomain.com/fonts/Beauty.woff') format('woff'),
+         url('https://yourdomain.com/fonts/Beauty.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ==========================================
    RESET & SYSTEM BASICS
    ========================================== */
 * {
@@ -73,7 +87,7 @@ body.site-frame {
 }
 
 .brand-script {
-    font-family: "Beauty", cursive;
+   font-family: 'Beauty', 'Satisfy', cursive; 
     font-size: 3.8rem;
     font-weight: 400;
     color: #ffffff;
