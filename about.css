@@ -99,11 +99,11 @@ p {
 }
 
 .brand-script {
-    font-family: "Beauty", cursive;
-    font-size: 3.8rem;
+    font-family: 'Beauty', cursive; 
+    font-size: 5rem;
     font-weight: 400;
     color: #ffffff;
-    line-height: 1;
+    line-height: 1.15; /* Increased from 1 to give room for script tails */
     letter-spacing: 1px;
 }
 
@@ -112,8 +112,18 @@ p {
     font-size: 0.7rem;
     color: rgba(255, 255, 255, 0.95);
     letter-spacing: 6px;
-    margin-top: -8px;
-    padding-left: 85px;
+    margin-top: -10px;
+    padding-left: 110px; /* Increased from 100px to push it further right */
+}
+
+@media (max-width: 600px) {
+    .brand-photography {
+        font-size: 0.55rem !important;
+        letter-spacing: 4px !important;
+        margin-top: 2px !important;      /* Drops it down just below the 'y' loop */
+        padding-left: 110px !important;  /* Shifts it safely to the right of the loop */
+        display: block !important;
+    }
 }
 
 .back-home-nav {
