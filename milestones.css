@@ -301,12 +301,32 @@ body.site-frame {
     margin-bottom: 20px;
     break-inside: avoid;
     cursor: pointer;
-    transition: .4s ease;
     object-fit: contain;
+
+    /* Base Soft Placeholder Style */
+    background-color: #e2e7e1;
+    animation: imagePlaceholderPulse 1.8s infinite ease-in-out;
+
+    /* Hidden State before Load */
+    opacity: 0;
+    transform: scale(0.98);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
 
-.gallery-grid img:hover {
+.gallery-grid img.is-loaded {
+    opacity: 1;
+    transform: scale(1);
+    animation: none;
+}
+
+.gallery-grid img.is-loaded:hover {
     transform: scale(1.03);
+}
+
+@keyframes imagePlaceholderPulse {
+    0% { background-color: #e2e7e1; }
+    50% { background-color: #d2ded1; }
+    100% { background-color: #e2e7e1; }
 }
 
 /* ==========================
