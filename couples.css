@@ -5,10 +5,7 @@
    ========================================== */
 @font-face {
     font-family: 'Beauty';
-    /* Replace with your exact domain or root path */
-    src: url('https://yourdomain.com/fonts/Beauty.woff2') format('woff2'),
-         url('https://yourdomain.com/fonts/Beauty.woff') format('woff'),
-         url('https://yourdomain.com/fonts/Beauty.ttf') format('truetype');
+    src: url('fonts/BEAUTYDEMO.TTF') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;

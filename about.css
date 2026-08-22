@@ -1,4 +1,15 @@
 /* ==========================================
+   CUSTOM FONT IMPORT (SERVER-HOSTED)
+   ========================================== */
+@font-face {
+    font-family: 'Beauty';
+    src: url('fonts/BEAUTYDEMO.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ==========================================
    RESET
 ========================================== */
 
