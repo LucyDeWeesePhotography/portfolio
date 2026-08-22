@@ -19,6 +19,33 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = 'auto'; // Restores page scroll mechanics
         });
 
+        // --- 1.1 AUTO-CLOSE MENU & SMOOTH SCROLL ON LINK CLICK ---
+        const navLinks = mobileNavbar.querySelectorAll('a');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+
+                // 1. Immediately close the mobile menu and restore background scrolling
+                mobileNavbar.classList.remove('nav-active');
+                document.body.style.overflow = 'auto';
+
+                // 2. Handle smooth scrolling for anchor links (#collections, #testimonials)
+                if (href && href.includes('#')) {
+                    const targetId = href.split('#')[1];
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
         // Auto-fallback reset when viewport transitions out of mobile context layout
         window.addEventListener('resize', () => {
             if (window.innerWidth > 900) {

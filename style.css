@@ -57,7 +57,7 @@ body.site-frame {
     background: #064435;
     text-align: center;
     padding: 40px 20px 25px;
-    
+
 }
 
 /* Main Brand Name */
@@ -92,7 +92,6 @@ body.site-frame {
     }
 }
 
-
 /* Photography Subtitle */
 .brand-photography {
     font-family: 'Lato', sans-serif;
@@ -110,7 +109,6 @@ body.site-frame {
     z-index: 1;
 }
 
-
 /* Name reveal */
 @keyframes revealName {
 
@@ -126,7 +124,6 @@ body.site-frame {
         letter-spacing: 1px;
     }
 }
-
 
 /* Photography reveal */
 @keyframes revealPhotography {
@@ -303,7 +300,6 @@ max-height: 750px;
     color:#d65421} */
 
 
-
 /* ==========================================
    ABOUT SPLIT MODULE
    ========================================== */
@@ -440,7 +436,6 @@ max-height: 750px;
     transform: scale(1.03);
 }
 
-
 .gallery-hint {
     display: block;
     text-align: center;
@@ -448,9 +443,8 @@ max-height: 750px;
     color: #7a6552;
     margin-top: 10px;
     margin-bottom: 35px;
-       
-}
 
+}
 
 /* hide on desktop */
 @media (min-width: 901px) {
@@ -579,7 +573,7 @@ footer p {
 .reel-video-wrapper video {
     width: 100%;
     max-width: 420px;
-    
+
     aspect-ratio: 4 / 5;
     object-fit: cover;
 
@@ -672,7 +666,6 @@ footer p {
     transform: scale(1.15);
     opacity: 1;
 }
-
 
 /* ==========================================
    EDITORIAL FLIP OVERLAY (CLEAN VERSION)
@@ -787,7 +780,6 @@ footer p {
     }
 } */
 
-
 /* ==========================================
    FINAL RESPONSIVE OVERLAY (ABSOLUTE CENTER)
    ========================================== */
@@ -818,7 +810,7 @@ footer p {
         align-items: center !important;
         justify-content: center !important;
         box-sizing: border-box !important;
-        
+
         -webkit-backface-visibility: hidden !important;
         backface-visibility: hidden !important;
     }
@@ -877,7 +869,7 @@ footer p {
         align-items: center !important;
         justify-content: center !important;
         box-sizing: border-box !important;
-        
+
         -webkit-backface-visibility: hidden !important;
         backface-visibility: hidden !important;
     }
@@ -889,18 +881,18 @@ footer p {
         position: absolute !important;
         inset: 0 !important;
         padding: 0 !important; /* Clears side asymmetries */
-        
+
         /* Forces structural flex-centering inside the flipped container coordinate space */
         display: flex !important;
         flex-direction: column !important;
         justify-content: center !important; 
         align-items: center !important;    
         box-sizing: border-box !important;
-        
+
         transform: rotateY(180deg) !important;
         -webkit-backface-visibility: hidden !important;
         backface-visibility: hidden !important;
-        
+
         background: rgba(255, 255, 255, 0.10) !important;
         backdrop-filter: blur(10px) !important;
         -webkit-backdrop-filter: blur(10px) !important;
@@ -926,13 +918,13 @@ footer p {
         font-size: 0.52rem !important;     
         letter-spacing: 2px !important;   
         line-height: 1.3 !important;      
-        
+
         /* Confines text bounds cleanly to build a tight, floating center block */
         width: 80% !important; 
         max-width: 220px !important;      
         white-space: normal !important;   
         text-align: center !important;
-        
+
         /* Erases local alignment variations */
         margin: 0 !important; 
         color: #ffffff !important;
@@ -990,21 +982,20 @@ footer p {
     }
 }
 
-
 @media (max-width: 900px) {
     body.site-frame {
         padding: 0;
     }
-    
+
     .about-grid-container {
         grid-template-columns: 1fr;
         gap: 45px;
     }
-    
+
     .banner-video-short {
         height: 420px;
     }
-    
+
     .overlay-top-left-card {
     top: 15px;
     left: 15px;
@@ -1021,7 +1012,7 @@ footer p {
 .overlay-top-left-card p {
     font-size: 0.75rem;
 }
-    
+
     .testimonial-container {
         flex-direction: column;
     }
@@ -1045,7 +1036,7 @@ footer p {
         cursor: pointer;
         z-index: 101;
     }
-    
+
     .menu-toggle-btn .bar {
         width: 100%;
         height: 3px;
@@ -1067,7 +1058,7 @@ footer p {
         justify-content: center;
         align-items: center;
         padding: 0;
-        
+
         /* Slide & opacity transition animation */
         opacity: 0;
         pointer-events: none;
@@ -1199,7 +1190,7 @@ footer p {
     .editorial-block {
         padding: 60px 4%;
     }
-    
+
     .banner-video-short {
         height: 280px;
     }
@@ -1228,7 +1219,7 @@ footer p {
     font-size: 1.7rem;
     margin-bottom: 0;
 }
-    
+
     @media (max-width: 600px) {
 
     .overlay-top-left-card {
@@ -1249,7 +1240,7 @@ footer p {
         line-height: 1.2;
     }
 }
-    
+
     .slider img {
         width: 220px;
         height: 150px;
@@ -1328,5 +1319,142 @@ footer p {
         font-size:.55rem;
         letter-spacing:4px;
     }
+}
 
+/* Fixing my nav bar for mobile*/
+@media (max-width: 900px) {
+    /* Floating, narrow menu aligned to the right side */
+    .navbar {
+        display: block !important;
+        position: absolute !important;
+        top: 100% !important;
+        right: 15px !important;              
+        left: auto !important;
+        width: 220px !important;             
+        height: auto !important;
+        min-height: 0 !important;
+        background: #064435 !important;      
+        padding: 35px 10px 18px 10px !important; 
+        border-radius: 8px !important;       
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
+        box-sizing: border-box !important;
+        
+        /* Smooth Fade & Slide Entrance */
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transform: translateY(-10px) !important;
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s !important;
+        pointer-events: none !important;
+        z-index: 1000 !important;
+    }
+
+    /* Active Animation State */
+    .navbar.nav-active {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(5px) !important;
+        pointer-events: auto !important;
+    }
+
+    /* Vertical Link Stack */
+    .navbar ul {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important; 
+        padding: 0 !important;
+        margin: 0 !important;
+        text-align: center !important;
+    }
+
+    .navbar li {
+        display: block !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    /* Base Link Setup for Mobile Underline */
+    .navbar a {
+        display: inline-block !important;
+        color: rgba(255, 255, 255, 0.95) !important;
+        position: relative !important;
+        padding-bottom: 5px !important;
+        font-size: 0.85rem !important;
+        letter-spacing: 2px !important;
+        text-transform: uppercase !important;
+        transition: color 0.3s ease !important;
+    }
+
+    /* Desktop Glowing Gold Underline Effect (Mobile Re-enabled) */
+    .navbar a::after {
+        content: '' !important;
+        display: block !important;
+        position: absolute !important;
+        width: 100% !important;
+        transform: scaleX(0) !important; /* Starts invisible */
+        height: 2px !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        background-color: #ffd700 !important;
+        box-shadow: 0 0 8px #5f5103 !important; /* Glowing gold shadow */
+        transform-origin: bottom center !important;
+        transition: transform 0.3s ease-out !important;
+    }
+
+    /* Link Hover & Tap States */
+    .navbar a:hover {
+        color: #ffd700 !important;
+    }
+
+    .navbar a:hover::after {
+        transform: scaleX(1) !important; /* Expands line on hover */
+    }
+
+    /* High-Contrast Frosted Close (X) Button */
+    .menu-close-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: absolute !important;
+        top: 10px !important;
+        right: 12px !important;
+        width: 26px !important;
+        height: 26px !important;
+        color: #ffffff !important;
+        background: rgba(255, 255, 255, 0.15) !important;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+        border-radius: 50% !important;
+        font-size: 1rem !important;
+        line-height: 1 !important;
+        cursor: pointer !important;
+        transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease !important;
+    }
+
+    .menu-close-btn:hover {
+        background-color: #ffd700 !important;
+        color: #064435 !important;
+        transform: scale(1.1) !important;
+    }
+}
+
+/*no trap*/
+/* Fix header bar permanently to top of mobile screen */
+@media (max-width: 900px) {
+    header, .header-container {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        z-index: 9999 !important;
+        background: #064435 !important; /* Header background */
+    }
+
+    /* Prevents top hero section from hiding behind fixed header */
+    body {
+        padding-top: 70px !important; /* Matches top header bar height */
+    }
+
+    /* Offsets smooth scrolling so header doesn't cover section headers */
+    #collections, #testimonials {
+        scroll-margin-top: 80px !important;
+    }
 }
