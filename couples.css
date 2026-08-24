@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&family=Satisfy&display=swap");
 
 /* ==========================================
-   CUSTOM FONT IMPORT (SERVER-HOSTED)
-   ========================================== */
+   CUSTOM FONT
+========================================== */
+
 @font-face {
     font-family: 'Beauty';
     src: url('fonts/BEAUTYDEMO.TTF') format('truetype');
@@ -13,16 +14,21 @@
 
 
 /* ==========================================
-   RESET & SYSTEM BASICS
-   ========================================== */
+   RESET
+========================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body.site-frame {
-    background-color: #f5ebe0; 
+    background-color: #f5ebe0;
     padding: 3% 4%;
     font-family: "Lato", sans-serif;
     color: #333333;
@@ -36,29 +42,16 @@ body.site-frame {
     max-width: 1440px;
     margin: 0 auto;
     overflow: hidden;
-    box-shadow: 
-        0 0 0 25px #AABA99, 
-        0 30px 70px rgba(0, 0, 0, 0.22); 
+    box-shadow:
+        0 0 0 25px #AABA99,
+        0 30px 70px rgba(0, 0, 0, 0.22);
 }
 
-.editorial-block {
-    padding: 90px 6%;
-}
 
 /* ==========================================
-   INTERCALATING BACKGROUNDS
-   ========================================== */
-.editorial-block.background-caramel {
-    background-color: #f5ebe0 !important;
-}
+   HEADER
+========================================== */
 
-.editorial-block.background-turquoise {
-    background-color: #cbded2 !important;
-}
-
-/* ==========================================
-   BRANDING, HEADER & DESKTOP NAVIGATION
-   ========================================== */
 .site-header {
     width: 100%;
     position: relative;
@@ -69,22 +62,16 @@ body.site-frame {
     background: #064435;
     text-align: center;
     padding: 40px 20px 25px;
-    
 }
 
-/* .logo-bar img {
-     height: 160px;
-    width: auto;
-    display: block;
-    margin: 0 auto;
-    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.35));} */
 .brand-header {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .brand-script {
-   font-family: 'Beauty', cursive; 
+    font-family: 'Beauty', cursive;
     font-size: 3.8rem;
     font-weight: 400;
     color: #ffffff;
@@ -101,15 +88,25 @@ body.site-frame {
     padding-left: 85px;
 }
 
-/* Hidden on desktop screen sizes by default */
-.menu-toggle-btn, .menu-close-btn {
+
+/* ==========================================
+   HAMBURGER
+========================================== */
+
+.menu-toggle-btn,
+.menu-close-btn {
     display: none;
 }
+
+
+/* ==========================================
+   NAVIGATION
+========================================== */
 
 .navbar {
     background: #064435;
     text-align: center;
-    padding: 15px 10px 30px 10px;
+    padding: 15px 10px 30px;
 }
 
 .navbar ul {
@@ -128,8 +125,8 @@ body.site-frame {
     text-transform: uppercase;
     font-size: 0.85rem;
     letter-spacing: 2px;
-    position: relative; /* Required for the absolute underline */
-    padding-bottom: 5px; /* Gives the underline some breathing room */
+    position: relative;
+    padding-bottom: 5px;
     transition: color 0.3s ease;
 }
 
@@ -137,155 +134,28 @@ body.site-frame {
     color: #ffd700;
 }
 
-/* Create the underline using a pseudo-element */
 .navbar a::after {
     content: '';
     position: absolute;
     width: 100%;
-    transform: scaleX(0); /* Starts at zero width */
+    transform: scaleX(0);
     height: 2px;
     bottom: 0;
     left: 0;
     background-color: #ffd700;
-    box-shadow: 0 0 8px #5f5103; /* Makes the underline glow too! */
+    box-shadow: 0 0 8px #5f5103;
     transform-origin: bottom center;
     transition: transform 0.3s ease-out;
 }
 
-/* Expand the underline on hover */
 .navbar a:hover::after {
     transform: scaleX(1);
 }
 
 
-
-/* ==========================
-   HEADER
-========================== */
-.family-header {
-    background: #064435;
-    padding: 20px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo-container img {
-    height: 90px;
-}
-
-.family-header ul {
-    display: flex;
-    gap: 35px;
-    list-style: none;
-}
-
-.family-header a {
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: .85rem;
-    transition: opacity 0.3s;
-}
-
-.family-header a:hover {
-    opacity: 0.7;
-}
-
-/* ==========================
-   HERO: Clean Banner & Glass Effect
-========================== */
-.family-hero {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-.hero-image {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.family-hero-overlay {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    color: white;
-    background: rgba(6,68,53,.45);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    padding: 30px 50px;
-    border-radius: 12px;
-    max-width: 80%;
-}
-
-.family-hero-overlay h1{
-    font-family:"Cormorant Garamond",serif;
-    font-size:3.5rem;
-}
-
-.family-hero-overlay p{
-    font-family:"Lato",sans-serif;
-    letter-spacing:3px;
-    text-transform:uppercase;
-}
-
-/* Tablet */
-
-@media(max-width:900px){
-
-    .family-hero-overlay h1{
-        font-size:2.5rem;
-    }
-
-}
-
-/* Mobile */
-
-@media(max-width:600px){
-
-    .family-hero{
-        padding:0;
-    }
-
-    .family-hero-overlay{
-        padding:15px 20px;
-    }
-
-    .family-hero-overlay h1{
-        font-size:1.8rem;
-    }
-
-    .family-hero-overlay p{
-        font-size:.65rem;
-        letter-spacing:2px;
-    }
-
-}
-/* ==========================
-   INTRO
-========================== */
-.family-intro {
-    padding: 90px 8%;
-    text-align: center;
-}
-
-.family-intro h2 {
-    font-family: 'Cormorant Garamond', serif;
-    color: #064435;
-    font-size: 3rem;
-    font-weight: 400;
-    margin-bottom: 20px;
-}
-
-.family-intro p {
-    max-width: 750px;
-    margin: auto;
-    line-height: 1.9;
-}
-
+/* ==========================================
+   PAGE TITLE
+========================================== */
 
 .family-title-block {
     text-align: center;
@@ -309,26 +179,199 @@ body.site-frame {
     color: #555;
     margin-top: 10px;
 }
-/* ==========================
-   GALLERY (Updated for Masonry Layout)
-========================== */
+
+
+/* ==========================================
+   VIDEO BANNER
+========================================== */
+
+.banner-video-short {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    min-height: 550px;
+    max-height: 750px;
+    overflow: hidden;
+}
+
+.video-background {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.video-dark-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(1, 39, 31, 0.12);
+    z-index: 1;
+}
+
+
+/* ==========================================
+   FLIP BRAND OVERLAY
+   ORIGINAL STRUCTURE
+========================================== */
+
+.overlay-top-left-card {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+
+    width: 380px;
+    height: 140px;
+
+    perspective: 1200px;
+    z-index: 2;
+}
+
+.overlay-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    transform-style: preserve-3d;
+
+    animation: autoFlip 7s infinite ease-in-out;
+}
+
+
+/* ==========================================
+   FRONT + BACK OF FLIP CARD
+========================================== */
+
+.overlay-front,
+.overlay-back {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px 25px;
+
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-left: 2px solid rgba(255, 255, 255, 0.35);
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+
+/* ==========================================
+   FRONT BRAND
+========================================== */
+
+.brand-name {
+    display: block;
+
+    font-family: 'Beauty', cursive;
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 1.2;
+
+    color: #ffffff;
+
+    text-align: center;
+}
+
+.brand-title {
+    display: block;
+
+    margin-top: 4px;
+
+    font-family: 'Lato', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+
+    text-transform: uppercase;
+    letter-spacing: 4px;
+
+    color: rgba(255,255,255,0.95);
+}
+
+
+/* ==========================================
+   BACK OF CARD
+========================================== */
+
+.overlay-back {
+    transform: rotateY(180deg);
+}
+
+.overlay-back p {
+    margin: 0;
+
+    font-family: 'Satisfy', cursive;
+    font-size: 1.4rem;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    text-shadow: 0 3px 18px rgba(0,0,0,0.5);
+}
+
+
+/* ==========================================
+   FLIP ANIMATION
+========================================== */
+
+@keyframes autoFlip {
+
+    0%, 40% {
+        transform: rotateY(0deg);
+    }
+
+    50%, 90% {
+        transform: rotateY(180deg);
+    }
+
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+
+/* ==========================================
+   GALLERY
+========================================== */
+
 .family-gallery {
-    padding: 0 5% 100px;
+    padding: 60px 5% 100px;
 }
 
 .gallery-grid {
     column-count: 4;
     column-gap: 20px;
 }
-    
+
 .gallery-grid img {
     width: 100%;
     height: auto;
     display: block;
+
     margin-bottom: 20px;
+
     break-inside: avoid;
+
     cursor: pointer;
-    transition: .4s ease;
+
+    transition: transform .4s ease;
+
     object-fit: contain;
 }
 
@@ -336,16 +379,22 @@ body.site-frame {
     transform: scale(1.03);
 }
 
-/* ==========================
+
+/* ==========================================
    LIGHTBOX
-========================== */
+========================================== */
+
 .lightbox {
     position: fixed;
     inset: 0;
+
     background: rgba(0, 0, 0, .95);
+
     display: none;
+
     justify-content: center;
     align-items: center;
+
     z-index: 9999;
 }
 
@@ -361,27 +410,98 @@ body.site-frame {
 
 .close-lightbox {
     position: absolute;
+
     top: 20px;
     right: 35px;
+
     color: white;
+
     font-size: 3rem;
+
     cursor: pointer;
 }
 
-/* ==========================
-   SPACING FIX: Banner/Gallery Gap
-========================== */
-.family-gallery {
-    padding-top: 60px; /* Adjust this value for more or less space */
-    padding-bottom: 100px;
+
+/* ==========================================
+   BACK TO TOP
+========================================== */
+
+.back-to-top {
+    display: block;
+
+    width: fit-content;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+
+    background-color: transparent;
+
+    padding: 12px 30px;
+
+    border-radius: 30px;
+
+    color: #064435;
+
+    text-decoration: none;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    position: relative;
+
+    transition: all 0.3s ease;
 }
 
-/* ==========================
+.back-to-top:hover {
+    color: #ffd700;
+
+    background-color: #064435;
+
+    box-shadow:
+        0 4px 15px rgba(6, 68, 53, 0.3);
+}
+
+.back-to-top::after {
+    content: '';
+
+    position: absolute;
+
+    width: calc(100% - 60px);
+
+    transform: scaleX(0);
+
+    height: 2px;
+
+    bottom: 8px;
+    left: 30px;
+
+    background-color: #ffd700;
+
+    box-shadow: 0 0 8px #5f5103;
+
+    transform-origin: bottom center;
+
+    transition: transform 0.3s ease-out;
+}
+
+.back-to-top:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* ==========================================
    FOOTER
-========================== */
+========================================== */
+
 footer {
     background: #064435;
+
     text-align: center;
+
     padding: 40px 20px;
 }
 
@@ -389,9 +509,11 @@ footer p {
     color: white;
 }
 
+
 /* ==========================================
-  SOCIAL MEDIA ICONS
-   ========================================== */
+   SOCIAL MEDIA
+========================================== */
+
 .social-icons {
     margin-bottom: 15px;
 }
@@ -402,10 +524,15 @@ footer p {
 }
 
 .social-icons img {
-    width: 38;
+    width: 38px;
     height: 38px;
+
     object-fit: contain;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+
     opacity: 0.85;
 }
 
@@ -414,202 +541,627 @@ footer p {
     opacity: 1;
 }
 
-/* ==========================
-   Back to Top Button
-========================== */
-.back-to-top {
-    display: block;
-    width: fit-content;
-    margin: 0 auto;
-    text-align: center;
-    
-    /* Create a clean capsule background shape */
-    background-color: transparent;
-    padding: 12px 30px;     /* Comfortable spacing inside the button */
-    border-radius: 30px;    /* Rounded pill edges */
-    margin-bottom: 55px;    /* Spacing at the bottom of the page */
-    
-    color: #064435;         /* Elegant dark green text by default */
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    position: relative;
-    transition: all 0.3s ease; /* Smooth transition for background, color, and shadow */
-}
 
-/* Hover State: Dark green background makes the gold perfectly readable */
-.back-to-top:hover {
-    color: #ffd700; 
-    background-color: #064435; /* Same dark green as your header/footer */
-    box-shadow: 0 4px 15px rgba(6, 68, 53, 0.3); /* Soft depth shadow */
-}
-
-/* Create the gold underline inside the button */
-.back-to-top::after {
-    content: '';
-    position: absolute;
-    width: calc(100% - 60px); /* Adjusts line width to match the text inside the padding */
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 8px;              /* Pulls line slightly up from the bottom curve */
-    left: 30px;               /* Aligns perfectly with the text start */
-    background-color: #ffd700;
-    box-shadow: 0 0 8px #5f5103;
-    transform-origin: bottom center;
-    transition: transform 0.3s ease-out;
-}
-
-/* Expand the gold underline on hover */
-.back-to-top:hover::after {
-    transform: scaleX(1);
-}
-
-
-
-/* ==========================
-   RESPONSIVE GRID
-========================== */
+/* ==========================================
+   TABLET
+========================================== */
 
 @media (max-width: 1000px) {
+
     .gallery-grid {
         column-count: 3;
     }
-}
 
-@media (max-width: 700px) {
-    .gallery-grid {
-        column-count: 2; /* ⭐ THIS is your mobile fix */
-    }
-}
-
-@media (max-width: 500px) {
-    .gallery-grid {
-        column-count: 2;
-        column-gap: 12px;
-    }
 }
 
 
-/* ==========================
-   MOBILE & TABLET HERO ADJUSTMENTS
-========================== */
+/* ==========================================
+   TABLET / SMALL LAPTOP
+========================================== */
 
-/* Tablet: Set a comfortable fixed height */
-@media(max-width: 900px) {
-    .family-hero {
-        height: 35vh; 
-    }
-}
+@media (max-width: 900px) {
 
-/* Mobile: Force the container to wrap the image perfectly */
-@media(max-width: 600px) {
-    .family-hero {
-        height: auto;       /* Removes the gap: height is now determined by the image */
-        min-height: 200px;  /* Ensures it doesn't get too small */
-        padding: 15px 0;    /* Adds a little breathing room around the image */
-    }
-    
-    .hero-image {
-        position: relative; /* Allows the image to push the container height */
-        display: block;
-        height: auto;       /* Respects the original image aspect ratio */
+    /* Header */
+
+    .logo-bar {
+        padding: 30px 20px 25px;
     }
 
-    .family-hero-overlay {
-        position: absolute; /* Keeps text layered over the image */
-        padding: 15px 20px;
+    .brand-script {
+        font-size: 3.2rem;
     }
-    
-    .family-hero-overlay h1 {
-        font-size: 1.8rem; 
+
+    .brand-photography {
+        font-size: .6rem;
+        letter-spacing: 5px;
+        padding-left: 65px;
     }
-    
-    .family-hero-overlay p {
+
+
+    /* Navigation */
+
+    .navbar {
+        padding: 12px 10px 25px;
+    }
+
+    .navbar li {
+        margin: 0 15px;
+    }
+
+
+    /* Page title */
+
+    .family-title-block {
+        padding: 60px 20px 25px;
+    }
+
+    .family-title-block h1 {
+        font-size: 3.5rem;
+    }
+
+
+    /* Video */
+
+    .banner-video-short {
+        height: 350px;
+        min-height: 350px;
+        max-height: 350px;
+    }
+
+
+    /* ==========================================
+       FLIP CARD — TABLET
+       KEEP BOTH SIDES INSIDE CARD
+    ========================================== */
+
+    .overlay-top-left-card {
+        top: 40px;
+        left: 25px;
+
+        width: 450px;
+        height: 100px;
+
+        perspective: 1200px;
+    }
+
+    .overlay-flip-inner {
+        width: 100%;
+        height: 100%;
+    }
+
+    .overlay-front,
+    .overlay-back {
+        position: absolute;
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        padding: 0 45px;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        box-sizing: border-box;
+
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+
+    .overlay-front .brand-name {
+        font-size: 1.55rem;
+        line-height: 1.1;
+
+        white-space: nowrap;
+    }
+
+    .overlay-front .brand-title {
         font-size: 0.6rem;
-        letter-spacing: 1px;
+        letter-spacing: 3px;
+
+        margin-top: 4px;
     }
-}
-@media (max-width: 600px) {
-    .logo-bar img {
-        height: 90px;  /* keeps it balanced on small screens */
+
+    .overlay-back {
+        padding: 0;
+
+        transform: rotateY(180deg);
     }
+
+    .overlay-back p {
+        width: 100%;
+
+        margin: 0 auto;
+
+        font-family: 'Lato', sans-serif;
+
+        font-size: 0.75rem;
+
+        letter-spacing: 3px;
+        line-height: 1.4;
+
+        text-transform: uppercase;
+
+        text-align: center;
+
+        white-space: normal;
+    }
+
 }
 
-/* ==========================
-   MOBILE TYPOGRAPHY POLISH
-========================== */
+
+/* ==========================================
+   MOBILE
+========================================== */
+
 @media (max-width: 600px) {
+
+    /* ==========================================
+       BODY / PAGE FRAME
+    ========================================== */
+
+    body.site-frame {
+        padding: 0;
+    }
+
+    .page-canvas {
+        width: 100%;
+
+        box-shadow:
+            0 0 0 10px #AABA99,
+            0 15px 35px rgba(0, 0, 0, 0.18);
+    }
+
+
+    /* ==========================================
+       HEADER
+    ========================================== */
+
+    .logo-bar {
+        position: relative;
+
+        padding: 30px 15px 25px;
+
+        min-height: 105px;
+    }
+
+    .brand-script {
+        font-size: 3rem;
+    }
+
+    .brand-photography {
+        font-size: .55rem;
+        letter-spacing: 4px;
+
+        margin-top: -6px;
+
+        padding-left: 55px;
+    }
+
+
+    /* ==========================================
+       MOBILE MENU BUTTON
+    ========================================== */
+
+    .menu-toggle-btn {
+        display: flex;
+
+        position: absolute;
+
+        right: 20px;
+        top: 35px;
+
+        width: 38px;
+        height: 32px;
+
+        padding: 5px;
+
+        flex-direction: column;
+        justify-content: space-between;
+
+        background: transparent;
+
+        border: none;
+
+        cursor: pointer;
+
+        z-index: 200;
+    }
+
+    .menu-toggle-btn .bar {
+        display: block;
+
+        width: 100%;
+        height: 2px;
+
+        background: #ffffff;
+
+        border-radius: 2px;
+    }
+
+
+    /* ==========================================
+       MOBILE NAVIGATION
+    ========================================== */
+
+    .navbar {
+        position: fixed;
+
+        top: 0;
+        right: -100%;
+
+        width: 80%;
+        max-width: 350px;
+        height: 100vh;
+
+        padding: 90px 30px 30px;
+
+        background: #064435;
+
+        text-align: center;
+
+        transition: right 0.35s ease;
+
+        z-index: 1000;
+
+        box-shadow: -10px 0 30px rgba(0,0,0,0.2);
+    }
+
+    .navbar.active {
+        right: 0;
+    }
+
+    .navbar ul {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 30px;
+    }
+
+    .navbar li {
+        display: block;
+
+        margin: 0;
+    }
+
+    .navbar a {
+        font-size: .8rem;
+
+        letter-spacing: 2px;
+    }
+
+    .menu-close-btn {
+        display: block;
+
+        position: absolute;
+
+        top: 20px;
+        right: 25px;
+
+        background: transparent;
+
+        border: none;
+
+        color: white;
+
+        font-size: 2.5rem;
+
+        line-height: 1;
+
+        cursor: pointer;
+    }
+
+
+    /* ==========================================
+       PAGE TITLE
+    ========================================== */
 
     .family-title-block {
         padding: 50px 15px 25px;
     }
 
     .family-title-block h1 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 2.2rem;   /* much smaller for mobile */
+        font-size: 2.2rem;
+
         font-weight: 500;
+
         line-height: 1.2;
-        letter-spacing: 0.5px;
-        color: #064435;
+
+        letter-spacing: .5px;
     }
 
     .family-title-block p {
-        font-family: "Lato", sans-serif;  /* keep Lato */
-        font-size: 0.75rem;
-        letter-spacing: 1.5px;  /* softer than desktop */
-        text-transform: uppercase;
-        color: #555;
+        font-size: .75rem;
+
+        letter-spacing: 1.5px;
+
         margin-top: 8px;
     }
-}
 
-@media (max-width:600px){
 
-    .logo-bar {
-        padding:30px 15px 25px;
+    /* ==========================================
+       VIDEO BANNER — MOBILE
+    ========================================== */
+
+    .banner-video-short {
+        width: 100%;
+
+        height: 260px;
+
+        min-height: 260px;
+        max-height: 260px;
+
+        overflow: hidden;
     }
 
+    .video-background {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        object-position: center top;
+    }
+
+
+    /* ==========================================
+       FLIP OVERLAY — SMALL PHONE
+       
+       THIS IS THE IMPORTANT PART.
+       The card dimensions stay fixed and
+       BOTH front/back stay inside it.
+    ========================================== */
+
+    .overlay-top-left-card {
+        position: absolute;
+
+        top: 35px;
+        left: 20px;
+
+        width: 190px;
+        height: 80px;
+
+        perspective: 1200px;
+
+        z-index: 2;
+    }
+
+    .overlay-flip-inner {
+        position: relative;
+
+        width: 100%;
+        height: 100%;
+
+        transform-style: preserve-3d;
+
+        animation: autoFlip 7s infinite ease-in-out;
+    }
+
+    .overlay-front,
+    .overlay-back {
+        position: absolute;
+
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        box-sizing: border-box;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+
+        background: rgba(255, 255, 255, 0.10);
+
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+
+        border-left: 2px solid rgba(255, 255, 255, 0.35);
+
+        overflow: hidden;
+    }
+
+
+    /* ==========================================
+       FRONT — MOBILE
+    ========================================== */
+
+    .overlay-front {
+        padding: 0 35px;
+    }
+
+    .overlay-front .brand-name {
+        display: block;
+
+        font-family: 'Beauty', cursive;
+
+        font-size: 1.15rem;
+
+        line-height: 1.1;
+
+        color: #ffffff;
+
+        text-align: center;
+
+        white-space: nowrap;
+    }
+
+    .overlay-front .brand-title {
+        display: block;
+
+        margin-top: 2px;
+
+        font-family: 'Lato', sans-serif;
+
+        font-size: .48rem;
+
+        letter-spacing: 2px;
+
+        line-height: 1;
+
+        color: rgba(255,255,255,.95);
+
+        text-transform: uppercase;
+
+        white-space: nowrap;
+    }
+
+
+    /* ==========================================
+       BACK — MOBILE
+    ========================================== */
+
+    .overlay-back {
+        padding: 0;
+
+        transform: rotateY(180deg);
+    }
+
+    .overlay-back p {
+        width: 80%;
+        max-width: 150px;
+
+        margin: 0;
+
+        font-family: 'Lato', sans-serif;
+
+        font-size: .52rem;
+
+        letter-spacing: 2px;
+
+        line-height: 1.3;
+
+        text-transform: uppercase;
+
+        text-align: center;
+
+        color: #ffffff;
+
+        white-space: normal;
+
+        overflow-wrap: break-word;
+
+        text-shadow: 0 3px 12px rgba(0,0,0,.5);
+    }
+
+
+    /* ==========================================
+       GALLERY
+    ========================================== */
+
+    .family-gallery {
+        padding: 40px 4% 70px;
+    }
+
+    .gallery-grid {
+        column-count: 2;
+
+        column-gap: 12px;
+    }
+
+    .gallery-grid img {
+        margin-bottom: 12px;
+    }
+
+
+    /* ==========================================
+       BACK TO TOP
+    ========================================== */
+
+    .back-to-top {
+        font-size: .75rem;
+
+        letter-spacing: 1.5px;
+
+        padding: 10px 25px;
+
+        margin-bottom: 40px;
+    }
+
+
+    /* ==========================================
+       FOOTER
+    ========================================== */
+
+    footer {
+        padding: 35px 20px;
+    }
+
+    footer p {
+        font-size: .8rem;
+    }
+
+}
+
+
+/* ==========================================
+   VERY SMALL PHONES
+   400px AND BELOW
+========================================== */
+
+@media (max-width: 400px) {
+
     .brand-script {
-        font-size:3rem;
+        font-size: 2.7rem;
     }
 
     .brand-photography {
-        font-size:.55rem;
-        letter-spacing:4px;
+        font-size: .5rem;
+        letter-spacing: 3px;
+        padding-left: 45px;
     }
 
-}
-
-/* ==========================
-   RESPONSIVE BANNER ADJUSTMENTS
-========================== */
-@media (max-width: 900px) {
-    .family-hero, .hero-image {
-        height: 350px;
-    }
-    
-    .family-hero-overlay h1 {
-        font-size: 2.5rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .family-hero, .hero-image {
-        height: 260px;
+    .menu-toggle-btn {
+        right: 15px;
     }
 
-    .family-hero-overlay {
-        padding: 15px 25px;
+
+    /* Keep the flip card safely inside the screen */
+
+    .overlay-top-left-card {
+        top: 25px;
+        left: 15px;
+
+        width: 180px;
+        height: 75px;
     }
-    
-    .family-hero-overlay h1 {
-        font-size: 1.8rem;
+
+    .overlay-front {
+        padding: 0 25px;
     }
-    
-    .family-hero-overlay p {
-        font-size: 0.65rem;
-        letter-spacing: 2px;
+
+    .overlay-front .brand-name {
+        font-size: 1.05rem;
     }
+
+    .overlay-front .brand-title {
+        font-size: .43rem;
+        letter-spacing: 1.7px;
+    }
+
+    .overlay-back p {
+        width: 85%;
+
+        font-size: .48rem;
+
+        letter-spacing: 1.6px;
+    }
+
+
+    .gallery-grid {
+        column-gap: 10px;
+    }
+
 }
