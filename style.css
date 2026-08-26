@@ -1753,6 +1753,6 @@ footer p {
 
 @media (max-width: 600px) {
     .banner-video-short img.video-background {
-        object-position: 20% center; /* if you need to push it further right */
+        object-position: 35% center; /* if you need to push it further right */
     }
 }
