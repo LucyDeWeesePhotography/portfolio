@@ -90,7 +90,7 @@ body.site-frame {
 
 
 /* ==========================================
-   HAMBURGER
+   HAMBURGER (REMOVED)
 ========================================== */
 
 .menu-toggle-btn,
@@ -212,17 +212,14 @@ body.site-frame {
 
 /* ==========================================
    FLIP BRAND OVERLAY
-   ORIGINAL STRUCTURE
 ========================================== */
 
 .overlay-top-left-card {
     position: absolute;
     top: 60px;
     left: 60px;
-
     width: 380px;
     height: 140px;
-
     perspective: 1200px;
     z-index: 2;
 }
@@ -231,9 +228,7 @@ body.site-frame {
     position: relative;
     width: 100%;
     height: 100%;
-
     transform-style: preserve-3d;
-
     animation: autoFlip 7s infinite ease-in-out;
 }
 
@@ -246,26 +241,18 @@ body.site-frame {
 .overlay-back {
     position: absolute;
     inset: 0;
-
     width: 100%;
     height: 100%;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     padding: 20px 25px;
-
     box-sizing: border-box;
-
     background: rgba(255, 255, 255, 0.10);
-
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-
     border-left: 2px solid rgba(255, 255, 255, 0.35);
-
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 }
@@ -277,29 +264,22 @@ body.site-frame {
 
 .brand-name {
     display: block;
-
     font-family: 'Beauty', cursive;
     font-size: 2.4rem;
     font-weight: 400;
     line-height: 1.2;
-
     color: #ffffff;
-
     text-align: center;
 }
 
 .brand-title {
     display: block;
-
     margin-top: 4px;
-
     font-family: 'Lato', sans-serif;
     font-size: 0.75rem;
     font-weight: 400;
-
     text-transform: uppercase;
     letter-spacing: 4px;
-
     color: rgba(255,255,255,0.95);
 }
 
@@ -314,14 +294,10 @@ body.site-frame {
 
 .overlay-back p {
     margin: 0;
-
     font-family: 'Satisfy', cursive;
     font-size: 1.4rem;
-
     color: #ffffff;
-
     text-align: center;
-
     text-shadow: 0 3px 18px rgba(0,0,0,0.5);
 }
 
@@ -331,15 +307,12 @@ body.site-frame {
 ========================================== */
 
 @keyframes autoFlip {
-
     0%, 40% {
         transform: rotateY(0deg);
     }
-
     50%, 90% {
         transform: rotateY(180deg);
     }
-
     100% {
         transform: rotateY(0deg);
     }
@@ -363,15 +336,10 @@ body.site-frame {
     width: 100%;
     height: auto;
     display: block;
-
     margin-bottom: 20px;
-
     break-inside: avoid;
-
     cursor: pointer;
-
     transition: transform .4s ease;
-
     object-fit: contain;
 }
 
@@ -387,14 +355,10 @@ body.site-frame {
 .lightbox {
     position: fixed;
     inset: 0;
-
     background: rgba(0, 0, 0, .95);
-
     display: none;
-
     justify-content: center;
     align-items: center;
-
     z-index: 9999;
 }
 
@@ -410,14 +374,10 @@ body.site-frame {
 
 .close-lightbox {
     position: absolute;
-
     top: 20px;
     right: 35px;
-
     color: white;
-
     font-size: 3rem;
-
     cursor: pointer;
 }
 
@@ -428,63 +388,39 @@ body.site-frame {
 
 .back-to-top {
     display: block;
-
     width: fit-content;
-
     margin: 0 auto 55px;
-
     text-align: center;
-
     background-color: transparent;
-
     padding: 12px 30px;
-
     border-radius: 30px;
-
     color: #064435;
-
     text-decoration: none;
-
     font-size: 0.9rem;
     font-weight: 700;
-
     text-transform: uppercase;
     letter-spacing: 2px;
-
     position: relative;
-
     transition: all 0.3s ease;
 }
 
 .back-to-top:hover {
     color: #ffd700;
-
     background-color: #064435;
-
-    box-shadow:
-        0 4px 15px rgba(6, 68, 53, 0.3);
+    box-shadow: 0 4px 15px rgba(6, 68, 53, 0.3);
 }
 
 .back-to-top::after {
     content: '';
-
     position: absolute;
-
     width: calc(100% - 60px);
-
     transform: scaleX(0);
-
     height: 2px;
-
     bottom: 8px;
     left: 30px;
-
     background-color: #ffd700;
-
     box-shadow: 0 0 8px #5f5103;
-
     transform-origin: bottom center;
-
     transition: transform 0.3s ease-out;
 }
 
@@ -499,9 +435,7 @@ body.site-frame {
 
 footer {
     background: #064435;
-
     text-align: center;
-
     padding: 40px 20px;
 }
 
@@ -526,13 +460,8 @@ footer p {
 .social-icons img {
     width: 38px;
     height: 38px;
-
     object-fit: contain;
-
-    transition:
-        transform 0.3s ease,
-        opacity 0.3s ease;
-
+    transition: transform 0.3s ease, opacity 0.3s ease;
     opacity: 0.85;
 }
 
@@ -547,11 +476,9 @@ footer p {
 ========================================== */
 
 @media (max-width: 1000px) {
-
     .gallery-grid {
         column-count: 3;
     }
-
 }
 
 
@@ -560,8 +487,6 @@ footer p {
 ========================================== */
 
 @media (max-width: 900px) {
-
-    /* Header */
 
     .logo-bar {
         padding: 30px 20px 25px;
@@ -577,9 +502,6 @@ footer p {
         padding-left: 65px;
     }
 
-
-    /* Navigation */
-
     .navbar {
         padding: 12px 10px 25px;
     }
@@ -587,9 +509,6 @@ footer p {
     .navbar li {
         margin: 0 15px;
     }
-
-
-    /* Page title */
 
     .family-title-block {
         padding: 60px 20px 25px;
@@ -599,28 +518,17 @@ footer p {
         font-size: 3.5rem;
     }
 
-
-    /* Video */
-
     .banner-video-short {
         height: 350px;
         min-height: 350px;
         max-height: 350px;
     }
 
-
-    /* ==========================================
-       FLIP CARD — TABLET
-       KEEP BOTH SIDES INSIDE CARD
-    ========================================== */
-
     .overlay-top-left-card {
         top: 40px;
         left: 25px;
-
         width: 450px;
         height: 100px;
-
         perspective: 1200px;
     }
 
@@ -633,20 +541,14 @@ footer p {
     .overlay-back {
         position: absolute;
         inset: 0;
-
         width: 100%;
         height: 100%;
-
         padding: 0 45px;
-
         display: flex;
         flex-direction: column;
-
         align-items: center;
         justify-content: center;
-
         box-sizing: border-box;
-
         backface-visibility: hidden;
         -webkit-backface-visibility: hidden;
     }
@@ -654,39 +556,29 @@ footer p {
     .overlay-front .brand-name {
         font-size: 1.55rem;
         line-height: 1.1;
-
         white-space: nowrap;
     }
 
     .overlay-front .brand-title {
         font-size: 0.6rem;
         letter-spacing: 3px;
-
         margin-top: 4px;
     }
 
     .overlay-back {
         padding: 0;
-
         transform: rotateY(180deg);
     }
 
     .overlay-back p {
         width: 100%;
-
         margin: 0 auto;
-
         font-family: 'Lato', sans-serif;
-
         font-size: 0.75rem;
-
         letter-spacing: 3px;
         line-height: 1.4;
-
         text-transform: uppercase;
-
         text-align: center;
-
         white-space: normal;
     }
 
@@ -699,32 +591,20 @@ footer p {
 
 @media (max-width: 600px) {
 
-    /* ==========================================
-       BODY / PAGE FRAME
-    ========================================== */
-
     body.site-frame {
         padding: 0;
     }
 
     .page-canvas {
         width: 100%;
-
         box-shadow:
             0 0 0 10px #AABA99,
             0 15px 35px rgba(0, 0, 0, 0.18);
     }
 
-
-    /* ==========================================
-       HEADER
-    ========================================== */
-
     .logo-bar {
         position: relative;
-
         padding: 30px 15px 25px;
-
         min-height: 105px;
     }
 
@@ -735,130 +615,37 @@ footer p {
     .brand-photography {
         font-size: .55rem;
         letter-spacing: 4px;
-
         margin-top: -6px;
-
         padding-left: 55px;
     }
 
-
-    /* ==========================================
-       MOBILE MENU BUTTON
-    ========================================== */
-
-    .menu-toggle-btn {
-        display: flex;
-
-        position: absolute;
-
-        right: 20px;
-        top: 35px;
-
-        width: 38px;
-        height: 32px;
-
-        padding: 5px;
-
-        flex-direction: column;
-        justify-content: space-between;
-
-        background: transparent;
-
-        border: none;
-
-        cursor: pointer;
-
-        z-index: 200;
-    }
-
-    .menu-toggle-btn .bar {
-        display: block;
-
-        width: 100%;
-        height: 2px;
-
-        background: #ffffff;
-
-        border-radius: 2px;
-    }
-
-
-    /* ==========================================
-       MOBILE NAVIGATION
-    ========================================== */
-
+    /* MOBILE NAVIGATION (VISIBLE) */
     .navbar {
-        position: fixed;
-
-        top: 0;
-        right: -100%;
-
-        width: 80%;
-        max-width: 350px;
-        height: 100vh;
-
-        padding: 90px 30px 30px;
-
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 12px 10px 20px;
         background: #064435;
-
         text-align: center;
-
-        transition: right 0.35s ease;
-
-        z-index: 1000;
-
-        box-shadow: -10px 0 30px rgba(0,0,0,0.2);
-    }
-
-    .navbar.active {
-        right: 0;
+        box-shadow: none;
     }
 
     .navbar ul {
         display: flex;
-
-        flex-direction: column;
-
-        gap: 30px;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
     }
 
     .navbar li {
-        display: block;
-
+        display: inline-block;
         margin: 0;
     }
 
     .navbar a {
-        font-size: .8rem;
-
-        letter-spacing: 2px;
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
     }
-
-    .menu-close-btn {
-        display: block;
-
-        position: absolute;
-
-        top: 20px;
-        right: 25px;
-
-        background: transparent;
-
-        border: none;
-
-        color: white;
-
-        font-size: 2.5rem;
-
-        line-height: 1;
-
-        cursor: pointer;
-    }
-
-
-    /* ==========================================
-       PAGE TITLE
-    ========================================== */
 
     .family-title-block {
         padding: 50px 15px 25px;
@@ -866,117 +653,69 @@ footer p {
 
     .family-title-block h1 {
         font-size: 2.2rem;
-
         font-weight: 500;
-
         line-height: 1.2;
-
         letter-spacing: .5px;
     }
 
     .family-title-block p {
         font-size: .75rem;
-
         letter-spacing: 1.5px;
-
         margin-top: 8px;
     }
 
-
-    /* ==========================================
-       VIDEO BANNER — MOBILE
-    ========================================== */
-
     .banner-video-short {
         width: 100%;
-
         height: 260px;
-
         min-height: 260px;
         max-height: 260px;
-
         overflow: hidden;
     }
 
     .video-background {
         width: 100%;
         height: 100%;
-
         object-fit: cover;
-
         object-position: center top;
     }
 
-
-    /* ==========================================
-       FLIP OVERLAY — SMALL PHONE
-       
-       THIS IS THE IMPORTANT PART.
-       The card dimensions stay fixed and
-       BOTH front/back stay inside it.
-    ========================================== */
-
     .overlay-top-left-card {
         position: absolute;
-
         top: 35px;
         left: 20px;
-
         width: 190px;
         height: 80px;
-
         perspective: 1200px;
-
         z-index: 2;
     }
 
     .overlay-flip-inner {
         position: relative;
-
         width: 100%;
         height: 100%;
-
         transform-style: preserve-3d;
-
         animation: autoFlip 7s infinite ease-in-out;
     }
 
     .overlay-front,
     .overlay-back {
         position: absolute;
-
         inset: 0;
-
         width: 100%;
         height: 100%;
-
         box-sizing: border-box;
-
         display: flex;
-
         flex-direction: column;
-
         align-items: center;
-
         justify-content: center;
-
         backface-visibility: hidden;
         -webkit-backface-visibility: hidden;
-
         background: rgba(255, 255, 255, 0.10);
-
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-
         border-left: 2px solid rgba(255, 255, 255, 0.35);
-
         overflow: hidden;
     }
-
-
-    /* ==========================================
-       FRONT — MOBILE
-    ========================================== */
 
     .overlay-front {
         padding: 0 35px;
@@ -984,82 +723,46 @@ footer p {
 
     .overlay-front .brand-name {
         display: block;
-
         font-family: 'Beauty', cursive;
-
         font-size: 1.15rem;
-
         line-height: 1.1;
-
         color: #ffffff;
-
         text-align: center;
-
         white-space: nowrap;
     }
 
     .overlay-front .brand-title {
         display: block;
-
         margin-top: 2px;
-
         font-family: 'Lato', sans-serif;
-
         font-size: .48rem;
-
         letter-spacing: 2px;
-
         line-height: 1;
-
         color: rgba(255,255,255,.95);
-
         text-transform: uppercase;
-
         white-space: nowrap;
     }
 
-
-    /* ==========================================
-       BACK — MOBILE
-    ========================================== */
-
     .overlay-back {
         padding: 0;
-
         transform: rotateY(180deg);
     }
 
     .overlay-back p {
         width: 80%;
         max-width: 150px;
-
         margin: 0;
-
         font-family: 'Lato', sans-serif;
-
         font-size: .52rem;
-
         letter-spacing: 2px;
-
         line-height: 1.3;
-
         text-transform: uppercase;
-
         text-align: center;
-
         color: #ffffff;
-
         white-space: normal;
-
         overflow-wrap: break-word;
-
         text-shadow: 0 3px 12px rgba(0,0,0,.5);
     }
-
-
-    /* ==========================================
-       GALLERY
-    ========================================== */
 
     .family-gallery {
         padding: 40px 4% 70px;
@@ -1067,7 +770,6 @@ footer p {
 
     .gallery-grid {
         column-count: 2;
-
         column-gap: 12px;
     }
 
@@ -1075,25 +777,12 @@ footer p {
         margin-bottom: 12px;
     }
 
-
-    /* ==========================================
-       BACK TO TOP
-    ========================================== */
-
     .back-to-top {
         font-size: .75rem;
-
         letter-spacing: 1.5px;
-
         padding: 10px 25px;
-
         margin-bottom: 40px;
     }
-
-
-    /* ==========================================
-       FOOTER
-    ========================================== */
 
     footer {
         padding: 35px 20px;
@@ -1123,17 +812,9 @@ footer p {
         padding-left: 45px;
     }
 
-    .menu-toggle-btn {
-        right: 15px;
-    }
-
-
-    /* Keep the flip card safely inside the screen */
-
     .overlay-top-left-card {
         top: 25px;
         left: 15px;
-
         width: 180px;
         height: 75px;
     }
@@ -1153,12 +834,9 @@ footer p {
 
     .overlay-back p {
         width: 85%;
-
         font-size: .48rem;
-
         letter-spacing: 1.6px;
     }
-
 
     .gallery-grid {
         column-gap: 10px;
