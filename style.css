@@ -1256,8 +1256,8 @@ footer p {
 }
 
     .slider img {
-        width: 220px;
-        height: 150px;
+        width: 320px;
+        height: 220px;
     }
 
        .reel-video-wrapper {
@@ -1749,4 +1749,10 @@ footer p {
   to {
     transform: translateY(3px);
   }
+}
+
+@media (max-width: 600px) {
+    .banner-video-short img.video-background {
+        object-position: 14% center; /* if you need to push it further right */
+    }
 }
