@@ -1752,7 +1752,15 @@ footer p {
 }
 
 @media (max-width: 600px) {
+    /* 1. Shrink container height to match image proportions */
+    .banner-video-short {
+        height: 320px !important; /* Adjust between 280px and 350px if needed */
+        min-height: unset !important;
+    }
+
+    /* 2. Set ideal focal point */
     .banner-video-short img.video-background {
-        object-position: 35% center; /* if you need to push it further right */
+        object-fit: cover !important;
+        object-position: 30% center !important; /* Slightly right of center */
     }
 }
