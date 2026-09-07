@@ -1753,6 +1753,9 @@ footer p {
 
 @media (max-width: 600px) {
     .banner-video-short {
+        width: 100% !important;
+        height: 280px !important; /* Forces the banner container to stay wide and short */
+        min-height: unset !important;
         overflow: hidden !important;
     }
 
@@ -1760,10 +1763,8 @@ footer p {
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
-        /* Keeps the image aligned neutrally */
-        object-position: 50% center !important; 
-        /* Zooms out the photo so all 4 family members fit */
-        transform: scale(0.78) !important; 
+        /* Anchors toward the left edge, pushing the mom and family safely to the right */
+        object-position: 22% center !important; 
+        transform: none !important; /* Keeps image full width with no side gaps */
     }
 }
-
