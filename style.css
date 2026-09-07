@@ -1761,6 +1761,6 @@ footer p {
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
-        object-position: 30% center !important; /* Lower percentage shifts image right */
+        object-position: 30% 20% !important; /* 20% pushes the image down to clear the top space */
     }
 }
