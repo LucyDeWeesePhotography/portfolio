@@ -1752,15 +1752,11 @@ footer p {
 }
 
 @media (max-width: 600px) {
-    .banner-video-short {
-        height: 260px !important;
-        min-height: unset !important;
-    }
-
     .banner-video-short img.video-background {
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
-        object-position: 30% 0% !important; /* 0% locks the top edge, pushing the family down */
+        object-position: 35% center !important;
+        transform: scale(0.88) !important; /* Zooms out the photo to bring the dad back into view */
     }
 }
