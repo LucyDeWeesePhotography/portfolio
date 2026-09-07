@@ -46,10 +46,16 @@
 
 
 <section class="banner-video-short">
-    <img 
-        src="./images/cathy-3.jpg" 
-        alt="Family portrait"
-        class="video-background">
+    <picture>
+        <!-- MOBILE IMAGE: Loaded on screens 600px wide or smaller -->
+        <source media="(max-width: 600px)" srcset="./images/hero-image.jpg" >
+
+        <!-- DESKTOP IMAGE: Default image for larger screens -->
+        <img 
+            src="./images/cathy-3.jpg" 
+            alt="Family portrait"
+            class="video-background">
+    </picture>
 
     <div class="video-dark-overlay"></div>
 
