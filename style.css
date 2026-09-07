@@ -1761,6 +1761,6 @@ footer p {
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
-        object-position: 30% 20% !important; /* 20% pushes the image down to clear the top space */
+        object-position: 30% 0% !important; /* 0% locks the top edge, pushing the family down */
     }
 }
