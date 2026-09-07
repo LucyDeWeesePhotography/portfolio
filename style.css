@@ -1752,11 +1752,18 @@ footer p {
 }
 
 @media (max-width: 600px) {
+    .banner-video-short {
+        overflow: hidden !important;
+    }
+
     .banner-video-short img.video-background {
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
-        object-position: 35% center !important;
-        transform: scale(0.88) !important; /* Zooms out the photo to bring the dad back into view */
+        /* Keeps the image aligned neutrally */
+        object-position: 50% center !important; 
+        /* Zooms out the photo so all 4 family members fit */
+        transform: scale(0.78) !important; 
     }
 }
+
